@@ -20,6 +20,7 @@ echo "--------------------------------------------------------------"
 # 18/10/20 - Copied Multipass SSH keys to user account and added onionshare and shellcheck
 # 18/1/21 - Added barrier, obs-studio and kdenlive
 # 14/3/21 - Slight change of order and changed default container configuration to add more memory
+# 3/4/21 - Removed setting i3 wallpaper. That's done in my i3 config file now. Also changed some links from dropbox to github
 
 # Standard error mitigation
 
@@ -39,12 +40,6 @@ sudo snap install bashtop
 # sudo apt update
 # apt install -y bashtop
 
-# Download some wallpaper and set it as default when using i3
-
-wget https://www.dropbox.com/s/olwwn2i31q9u2ap/2019-09-17-15.54.54.jpg
-mv 2019-09-17-15.54.54.jpg default_wallpaper.jpg
-echo "feh --bg-scale default_wallpaper.jpg" >> .profile
-
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
 
@@ -54,7 +49,7 @@ sudo protonvpn init
 
 # Download a custom update script
 
-wget https://www.dropbox.com/s/k28ke7animbldzp/updateall
+wget https://github.com/teknostatik/updateall/blob/master/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 
@@ -87,7 +82,7 @@ echo "alias top='bashtop'" >> .bashrc
 ## Build a container running the latest LTS for testing things on
 
 multipass launch -m 4G -d 20G lts --name ubuntu-lts
-multipass exec ubuntu-lts -- wget https://www.dropbox.com/s/p5jjsbvuuskeotl/deploy_ubuntu_wsl.sh
+multipass exec ubuntu-lts -- wget https://github.com/teknostatik/deploy_ubuntu/blob/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh
