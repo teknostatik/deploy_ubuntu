@@ -2,7 +2,7 @@
 
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps). Comment out any sections that don't interest you.
 echo "--------------------------------------------------------------"
-echo "General purpose Ubuntu configuration script - v1.4, March 2021"
+echo "General purpose Ubuntu configuration script - v1.5, April 2021"
 echo "--------------------------------------------------------------"
 
 # Changelog:
@@ -33,7 +33,7 @@ sudo apt upgrade -y
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier tilix gnome-session gnome-tweak-tool remmina
+sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier tilix gnome-session gnome-tweak-tool remmina kate konsole pcmanfm-qt
 sudo snap install multipass --classic
 sudo snap install bashtop
 # sudo add-apt-repository ppa:bashtop-monitor/bashtop
