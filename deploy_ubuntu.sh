@@ -81,7 +81,7 @@ echo "alias top='bashtop'" >> .bashrc
 
 ## Build a container running the latest LTS for testing things on
 
-multipass launch -m 4G -d 20G lts --name ubuntu-lts
+multipass launch -m 8G -d 20G lts --name ubuntu-lts
 multipass exec ubuntu-lts -- wget https://github.com/teknostatik/deploy_ubuntu/blob/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
