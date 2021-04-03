@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "updateall v.0.2 for WSL and Multipass"
+#Run this as a normal user. Your admin password will be asked for if required.
+sudo apt update
+sudo apt upgrade -y
+sudo apt full-upgrade -y
+sudo apt autoremove -y
+echo "The script has now finished running."
+
