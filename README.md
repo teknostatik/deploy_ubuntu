@@ -8,6 +8,7 @@ What this breaks down to is:
 * `deploy_privacy.sh` - script to build a multipass container and then call `deploy_ubuntu_privacy.sh` to build a tor-based setup
 * `deploy_ubuntu_wsl.sh` - script for installing a minimal graphical desktop in a Multipass container 
 * `updateall` - stripped down update script for multipass containers 
+* `mp.sh` - script to build a collection of Multipass containers for testing on different versions of Ubuntu
 
 
 
