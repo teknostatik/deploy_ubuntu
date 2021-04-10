@@ -2,7 +2,7 @@
 
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps). Comment out any sections that don't interest you.
 echo "--------------------------------------------------------------"
-echo "General purpose Ubuntu configuration script - v1.5, April 2021"
+echo "General purpose Ubuntu configuration script - v1.6, April 2021"
 echo "--------------------------------------------------------------"
 
 # Changelog:
@@ -21,6 +21,7 @@ echo "--------------------------------------------------------------"
 # 18/1/21 - Added barrier, obs-studio and kdenlive
 # 14/3/21 - Slight change of order and changed default container configuration to add more memory
 # 3/4/21 - Removed setting i3 wallpaper. That's done in my i3 config file now. Also changed some links from dropbox to github
+# 10/4/21 - Added zathura and removed tilix
 
 # Standard error mitigation
 
@@ -33,12 +34,9 @@ sudo apt upgrade -y
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier tilix gnome-session gnome-tweak-tool remmina kate konsole pcmanfm-qt
+sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier zathura gnome-session gnome-tweak-tool remmina kate konsole pcmanfm-qt
 sudo snap install multipass --classic
 sudo snap install bashtop
-# sudo add-apt-repository ppa:bashtop-monitor/bashtop
-# sudo apt update
-# apt install -y bashtop
 
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
@@ -49,7 +47,7 @@ sudo protonvpn init
 
 # Download a custom update script
 
-wget https://github.com/teknostatik/updateall/blob/master/updateall
+wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 
@@ -82,7 +80,7 @@ echo "alias top='bashtop'" >> .bashrc
 ## Build a container running the latest LTS for testing things on
 
 multipass launch -m 8G -d 20G lts --name ubuntu-lts
-multipass exec ubuntu-lts -- wget https://github.com/teknostatik/deploy_ubuntu/blob/main/deploy_ubuntu_wsl.sh
+multipass exec ubuntu-lts -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh

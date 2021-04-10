@@ -20,7 +20,7 @@ sudo apt install -y byobu xrdp gnome-session xterm firefox
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
-wget https://github.com/teknostatik/deploy_ubuntu/blob/main/updateall
+wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 updateall

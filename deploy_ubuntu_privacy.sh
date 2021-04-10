@@ -19,7 +19,7 @@ sudo apt install -y byobu feh xrdp gnome-session xterm torbrowser-launcher pcman
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
-wget https://www.dropbox.com/s/80zt6oe3sbnxovx/updateall
+wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 updateall
