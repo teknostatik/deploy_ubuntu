@@ -22,6 +22,7 @@ echo "--------------------------------------------------------------"
 # 14/3/21 - Slight change of order and changed default container configuration to add more memory
 # 3/4/21 - Removed setting i3 wallpaper. That's done in my i3 config file now. Also changed some links from dropbox to github
 # 10/4/21 - Added zathura and removed tilix
+# 15/4/21 - Removed anything QT based and replaced with GTK versions
 
 # Standard error mitigation
 
@@ -34,7 +35,7 @@ sudo apt upgrade -y
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier zathura gnome-session gnome-tweak-tool remmina kate konsole pcmanfm-qt
+sudo apt install -y i3 feh arandr curl byobu synaptic xautolock shellcheck barrier zathura gnome-session gnome-tweak-tool remmina pcmanfm featherpad ranger
 sudo snap install multipass --classic
 sudo snap install bashtop
 
