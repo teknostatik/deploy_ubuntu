@@ -16,7 +16,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu xrdp gnome-session kitty firefox
+sudo apt install -y byobu xrdp gnome-session kitty firefox pcmanfm
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 

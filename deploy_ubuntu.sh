@@ -2,7 +2,7 @@
 
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps). Comment out any sections that don't interest you.
 echo "--------------------------------------------------------------"
-echo "General purpose Ubuntu configuration script - v1.6, April 2021"
+echo "General purpose Ubuntu configuration script - v1.7, April 2021"
 echo "--------------------------------------------------------------"
 
 # Changelog:
@@ -23,6 +23,7 @@ echo "--------------------------------------------------------------"
 # 3/4/21 - Removed setting i3 wallpaper. That's done in my i3 config file now. Also changed some links from dropbox to github
 # 10/4/21 - Added zathura and removed tilix
 # 16/4/21 - Removed anything QT based and replaced with GTK versions. Also added kitty, i3blocks, ranger and featherpad and removed gnome-session and gnome-tweak-tool
+# 25/4/21 - Pulled in i3 config file from github - will need some edits for anyone who isn't me
 
 # Standard error mitigation
 
@@ -98,3 +99,10 @@ sudo chown andy -R ~/.ssh/multipassKey
 
 sudo apt install -y nautilus-dropbox
 dropbox start -i
+
+# Set up i3. Comment this out if you want to use your own config file or build your config from scratch. You will need to point to a more sensible location for wallpaper.
+
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
+sudo mv config /etc/i3/
+
+echo "The script has now finished running."
