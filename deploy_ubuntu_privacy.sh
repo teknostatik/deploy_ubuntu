@@ -17,6 +17,13 @@ sudo apt update
 
 sudo apt install -y byobu xrdp gnome-session kitty torbrowser-launcher pcmanfm onionshare zathura
 
+# Install everything needed for ProtonVPN
+# See https://protonvpn.com/support/linux-vpn-tool/ for how to install
+
+sudo apt install -y openvpn dialog python3-pip python3-setuptools
+sudo pip3 install protonvpn-cli
+sudo protonvpn init
+
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
 wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/updateall
