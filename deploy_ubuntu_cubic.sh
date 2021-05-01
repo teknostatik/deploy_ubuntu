@@ -18,9 +18,15 @@ set -euo pipefail
 sudo apt update
 sudo apt upgrade -y
 
+# Add wallpaper randomiser
+
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
+sudo mv randomise_wallpaper /usr/local/bin/
+sudo chmod 755 /usr/local/bin/randomise_wallpaper
+
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm featherpad firefox
+sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm featherpad firefox xinit network-manager
 
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
