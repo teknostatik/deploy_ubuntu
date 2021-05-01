@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps). Comment out any sections that don't interest you.
-echo "--------------------------------------------------------------"
-echo "General purpose Ubuntu configuration script - v1.7, April 2021"
-echo "--------------------------------------------------------------"
+echo "------------------------------------------------------------"
+echo "General purpose Ubuntu configuration script - v1.8, May 2021"
+echo "------------------------------------------------------------"
 
 # Changelog:
 # 16/5/20 - Added Multipass
@@ -24,6 +24,7 @@ echo "--------------------------------------------------------------"
 # 10/4/21 - Added zathura and removed tilix
 # 16/4/21 - Removed anything QT based and replaced with GTK versions. Also added kitty, i3blocks, ranger and featherpad and removed gnome-session and gnome-tweak-tool
 # 25/4/21 - Pulled in i3 config file from github - will need some edits for anyone who isn't me
+# 1/5/21 - Added wallpaper randomiser
 
 # Standard error mitigation
 
@@ -104,5 +105,11 @@ dropbox start -i
 
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
+
+# Add wallpaper randomiser
+
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
+sudo mv randomise_wallpaper /usr/local/bin/
+sudo chmod 755 /usr/local/bin/randomise_wallpaper
 
 echo "The script has now finished running."
