@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
-echo "--------------------------------------------------------"
-echo "Script to add software to Cubic builds - V0.1 April 2021"
-echo "--------------------------------------------------------"
+echo "------------------------------------------------------"
+echo "Script to add software to Cubic builds - v0.2 May 2021"
+echo "------------------------------------------------------"
 
 # Changelog:
 # 25/4/21 - Created script
+# 1/5/21 - Removed some apps that have lots of dependencies
 
 # Standard error mitigation
 
@@ -19,7 +20,7 @@ sudo apt upgrade -y
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm featherpad ranger irssi zsh
+sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm featherpad firefox
 
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
@@ -37,13 +38,13 @@ sudo chmod 755 /usr/local/bin/updateall
 
 sudo apt install -y neofetch fortune-mod cowsay
 
-# Install the applications I use for writing, editing and previewing text
+# Install the applications I use for converting text
 
 sudo apt install -y pandoc texlive texlive-latex-extra
 
 # Install some desktop applications for creating, editing and playing common media types
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission kdenlive
+sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install -y spotify-client
