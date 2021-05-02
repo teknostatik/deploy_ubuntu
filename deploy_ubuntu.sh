@@ -24,7 +24,7 @@ echo "------------------------------------------------------------"
 # 10/4/21 - Added zathura and removed tilix
 # 16/4/21 - Removed anything QT based and replaced with GTK versions. Also added kitty, i3blocks, ranger and featherpad and removed gnome-session and gnome-tweak-tool
 # 25/4/21 - Pulled in i3 config file from github - will need some edits for anyone who isn't me
-# 1/5/21 - Added wallpaper randomiser
+# 1/5/21 - Added wallpaper randomiser and lxde (to pull in icons and other dependencies)
 
 # Standard error mitigation
 
@@ -37,7 +37,7 @@ sudo apt upgrade -y
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm featherpad ranger irssi zsh
+sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm lxde featherpad ranger irssi zsh
 sudo snap install multipass --classic
 sudo snap install bashtop
 
