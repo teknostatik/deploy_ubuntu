@@ -62,7 +62,7 @@ sudo mv config /etc/i3/
 # Set up i3 wallpaper
 
 mkdir /usr/share/wallpaper
-cd /usr/share/wallaper
+cd /usr/share/wallpaper
 sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
 sudo wget https://www.dropbox.com/s/mtlzx6v4hlf8x2p/73hkbyuzk0p41.png
 sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
@@ -80,6 +80,6 @@ sudo chmod 755 /usr/local/bin/randomise_wallpaper
 
 wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/post_install.sh
 sudo mv post_install.sh /usr/local/bin/
-sudo chmod 755 /usr/local/bin/post_install.sh 
+sudo chmod 755 /usr/local/bin/post_install.sh
 
 echo "The script has now finished running."
