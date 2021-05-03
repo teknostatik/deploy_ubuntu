@@ -2,12 +2,13 @@
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 echo "------------------------------------------------------"
-echo "Script to add software to Cubic builds - v0.2 May 2021"
+echo "Script to add software to Cubic builds - v0.3 May 2021"
 echo "------------------------------------------------------"
 
 # Changelog:
 # 25/4/21 - Created script
 # 1/5/21 - Removed some apps that have lots of dependencies
+# 3/5/21 - Added wallpaper (and moved save location for wallpaper to /usr/share/wallpaper)
 
 # Standard error mitigation
 
@@ -17,12 +18,6 @@ set -euo pipefail
 
 sudo apt update
 sudo apt upgrade -y
-
-# Add wallpaper randomiser
-
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
-sudo mv randomise_wallpaper /usr/local/bin/
-sudo chmod 755 /usr/local/bin/randomise_wallpaper
 
 # Install the i3 window manager and some basic utilities
 
@@ -59,9 +54,25 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 
 sudo apt install -y nautilus-dropbox
 
-# Set up i3. Comment this out if you want to use your own config file or build your config from scratch. You will need to point to a more sensible location for wallpaper.
+# Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
 
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
+
+# Set up i3 wallpaper
+
+mkdir /usr/share/wallpaper
+cd /usr/share/wallaper
+sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
+sudo wget https://www.dropbox.com/s/mtlzx6v4hlf8x2p/73hkbyuzk0p41.png
+sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
+sudo wget https://www.dropbox.com/s/nlvt4x7n8yuxnd2/alena-aenami-away-1k.jpg
+sudo wget https://www.dropbox.com/s/ujqf1rpmdphcs1x/uwp825694.jpeg
+sudo wget https://www.dropbox.com/s/95lox8xzvh7l6me/wp5458622-stardew-valley-desktop-wallpapers.png
+sudo wget https://www.dropbox.com/s/c8n7m3i2ruc84br/115104751-1a10a380-9f20-11eb-95b0-8950ac6381f0.png
+sudo wget https://www.dropbox.com/s/tpq9v8lpwi753en/akira-in-city-4k-v0-1680x1050.jpg
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
+sudo mv randomise_wallpaper /usr/local/bin/
+sudo chmod 755 /usr/local/bin/randomise_wallpaper
 
 echo "The script has now finished running."
