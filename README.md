@@ -9,5 +9,6 @@ What this breaks down to is:
 * `deploy_ubuntu_wsl.sh` - script for installing a minimal graphical desktop in a Multipass container
 * `updateall` - stripped down update script for Multipass containers
 * `mp.sh` - script to build a collection of Multipass containers for testing on different versions of Ubuntu
+* `deploy_ubuntu_cubic.sh` to automate my setup using Cubic to build the iso and `post_install.sh` to run directly afterwards to pull in snaps and other local configuration.
 
-All of these scripts are under fairly active development, especially as I've just set up a new computer.
+All of these scripts are under fairly active development. I do like to tweak things a lot.
