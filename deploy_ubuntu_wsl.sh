@@ -31,14 +31,14 @@ sudo apt install -y neofetch fortune-mod cowsay
 echo "echo; fortune | cowsay;echo" >> .profile
 echo "echo; neofetch;echo" >> .profile
 
-# Install bashtop - may fail on older verisons
+# Install bpytop - may fail on older verisons
 
-sudo snap install bashtop
+sudo snap install bpytop
 
 # Set some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
-echo "alias top='bashtop'" >> .bashrc
+echo "alias top='bpytop'" >> .bashrc
 
 # Set a password so we can use RDP
 

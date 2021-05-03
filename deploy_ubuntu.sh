@@ -39,7 +39,7 @@ sudo apt upgrade -y
 
 sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm lxde featherpad ranger irssi zsh
 sudo snap install multipass --classic
-sudo snap install bashtop
+sudo snap install bpytop
 sudo snap install unixbench
 
 # Install everything needed for ProtonVPN and Tor
@@ -79,7 +79,7 @@ sudo apt install -y obs-studio
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias mp='multipass list'" >> .bashrc
-echo "alias top='bashtop'" >> .bashrc
+echo "alias top='bpytop'" >> .bashrc
 
 ## Build a container running the latest LTS for testing things on
 

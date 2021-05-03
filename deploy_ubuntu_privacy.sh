@@ -16,6 +16,7 @@ sudo apt update
 # Install some basic utilities
 
 sudo apt install -y byobu xrdp gnome-session kitty torbrowser-launcher pcmanfm onionshare zathura
+sudo snap install bpytop
 
 # Install everything needed for ProtonVPN
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
@@ -40,7 +41,7 @@ echo "echo; neofetch;echo" >> .profile
 # Set some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
-echo "alias top='bashtop'" >> .bashrc
+echo "alias top='bpytop'" >> .bashrc
 
 # Set a password so we can use RDP
 
