@@ -19,7 +19,7 @@ set -euo pipefail
 # Install some utilities
 
 sudo snap install multipass --classic
-sudo snap install bashtop
+sudo snap install bashtop unixbench 
 
 # Set up ProtonVPN for the logged in user
 # See https://account.protonvpn.com/account#openvpn for credentials

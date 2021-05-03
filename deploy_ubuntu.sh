@@ -40,6 +40,7 @@ sudo apt upgrade -y
 sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm lxde featherpad ranger irssi zsh
 sudo snap install multipass --classic
 sudo snap install bashtop
+sudo snap install unixbench
 
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
