@@ -68,9 +68,7 @@ sudo wget https://www.dropbox.com/s/mtlzx6v4hlf8x2p/73hkbyuzk0p41.png
 sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
 sudo wget https://www.dropbox.com/s/nlvt4x7n8yuxnd2/alena-aenami-away-1k.jpg
 sudo wget https://www.dropbox.com/s/ujqf1rpmdphcs1x/uwp825694.jpeg
-sudo wget https://www.dropbox.com/s/95lox8xzvh7l6me/wp5458622-stardew-valley-desktop-wallpapers.png
 sudo wget https://www.dropbox.com/s/c8n7m3i2ruc84br/115104751-1a10a380-9f20-11eb-95b0-8950ac6381f0.png
-sudo wget https://www.dropbox.com/s/tpq9v8lpwi753en/akira-in-city-4k-v0-1680x1050.jpg
 cd
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
