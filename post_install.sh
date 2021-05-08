@@ -16,18 +16,14 @@ set -euo pipefail
 
 # Update software
 
-# Install some utilities
+# Install some snaps
 
 sudo snap install multipass --classic
-sudo snap install bpytop unixbench 
+sudo snap install bpytop unixbench atom
 
 # Set up ProtonVPN for the logged in user
 # See https://account.protonvpn.com/account#openvpn for credentials
 sudo protonvpn init
-
-# Install Atom
-
-sudo snap install --classic atom
 
 # Add some aliases
 
