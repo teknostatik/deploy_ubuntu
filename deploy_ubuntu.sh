@@ -33,11 +33,14 @@ set -euo pipefail
 # Update software
 
 sudo apt update
-sudo apt upgrade -y
+sudo apt -y upgrade
 
 # Install the i3 window manager and some basic utilities
 
 sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm lxde featherpad ranger irssi zsh
+
+# Install some snaps
+
 sudo snap install multipass --classic
 sudo snap install bpytop
 sudo snap install unixbench
@@ -64,7 +67,7 @@ echo "echo; neofetch;echo" >> .profile
 # Install the applications I use for writing, editing and previewing text
 
 sudo snap install --classic atom
-sudo apt install -y pandoc texlive texlive-latex-extra
+sudo apt install -y pandoc texlive texlive-latex-extra abiword
 
 # Install some desktop applications for creating, editing and playing common media types
 
@@ -102,7 +105,7 @@ sudo chown andy -R ~/.ssh/multipassKey
 sudo apt install -y nautilus-dropbox
 dropbox start -i
 
-# Set up i3. Comment this out if you want to use your own config file or build your config from scratch. You will need to point to a more sensible location for wallpaper.
+# Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
 
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
