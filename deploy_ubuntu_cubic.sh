@@ -5,11 +5,6 @@ echo "------------------------------------------------------"
 echo "Script to add software to Cubic builds - v0.3 May 2021"
 echo "------------------------------------------------------"
 
-# Changelog:
-# 25/4/21 - Created script
-# 1/5/21 - Removed some apps that have lots of dependencies
-# 3/5/21 - Added wallpaper (and moved save location for wallpaper to /usr/share/wallpaper)
-
 # Standard error mitigation
 
 set -euo pipefail

@@ -5,12 +5,6 @@ echo "----------------------------------------------"
 echo "Multipass Deployment Script - v0.4, April 2021"
 echo "----------------------------------------------"
 
-# Changelog:
-# 28/6/20 - Created script to deploy 5 containers (POC)
-# 14/11/20 - Updated to latest development version of Ubuntu (21.04) and the latest Ubuntu Core image
-# 28/11/20 - Made the LTS container primary
-# 05/04/21 - Gave the containers more memory and referenced my new github standard build (minimal gnome)
-
 # Standard error mitigation
 
 set -euo pipefail

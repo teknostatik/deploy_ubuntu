@@ -5,9 +5,6 @@ echo "-------------------------------------------"
 echo "Deploy Private Container - v0.1, March 2021"
 echo "-------------------------------------------"
 
-# Changelog:
-# 31/03/2021 - created
-
 ## Build a container running the latest LTS and set it up with Tor Browser and Onion Share
 ## You will want at least 16G of RAM and 100G of free disk space to make these settings sensible
 

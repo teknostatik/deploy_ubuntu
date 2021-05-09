@@ -6,10 +6,6 @@ echo "------------------------------------------------------------"
 echo "General purpose Ubuntu configuration script - v0.1, May 2021"
 echo "------------------------------------------------------------"
 
-# Changelog:
-# 3/5/21 - Created
-
-
 # Standard error mitigation
 
 set -euo pipefail

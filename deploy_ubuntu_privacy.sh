@@ -5,10 +5,6 @@ echo "------------------------------------------------------------"
 echo "Ubuntu configuration script for Multipass - v0.1, March 2021"
 echo "------------------------------------------------------------"
 
-# Changelog:
-# 25/3/2021 - Created
-
-
 # Update software
 
 sudo apt update

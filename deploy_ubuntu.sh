@@ -5,27 +5,6 @@ echo "------------------------------------------------------------"
 echo "General purpose Ubuntu configuration script - v1.8, May 2021"
 echo "------------------------------------------------------------"
 
-# Changelog:
-# 16/5/20 - Added Multipass
-# 16/5/20 - Added Proton VPN
-# 06/6/20 - Added some aliases
-# 13/6/20 - Added arandr and brasero
-# 16/6/20 - Added sound-juicer and transmission
-# 28/6/20 - Added scripted build of a Multipass container
-# 11/7/20 - General tidying up
-# 19/7/20 - Reverted to non-snap version of Spotify (for stability) & changed wallpaper
-# 23/7/20 - Changed order so multipass containers have downloaded before dropbox tries to sync files
-# 18/9/20 - Removed anything not used regularly
-# 27/9/20 - Enabled Multipass containers to run graphical applications
-# 18/10/20 - Copied Multipass SSH keys to user account and added onionshare and shellcheck
-# 18/1/21 - Added barrier, obs-studio and kdenlive
-# 14/3/21 - Slight change of order and changed default container configuration to add more memory
-# 3/4/21 - Removed setting i3 wallpaper. That's done in my i3 config file now. Also changed some links from dropbox to github
-# 10/4/21 - Added zathura and removed tilix
-# 16/4/21 - Removed anything QT based and replaced with GTK versions. Also added kitty, i3blocks, ranger and featherpad and removed gnome-session and gnome-tweak-tool
-# 25/4/21 - Pulled in i3 config file from github - will need some edits for anyone who isn't me
-# 1/5/21 - Added wallpaper randomiser and lxde (to pull in icons and other dependencies)
-
 # Standard error mitigation
 
 set -euo pipefail

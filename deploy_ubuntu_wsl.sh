@@ -6,10 +6,6 @@ echo "--------------------------------------------------------------------"
 echo "Ubuntu configuration script for WSL and Multipass - v0.3, March 2021"
 echo "--------------------------------------------------------------------"
 
-# Changelog:
-# 16/5/20 - Commented out text editing sofware
-# 14/3/21 - Added some graphical apps and tidied up
-
 # Update software
 
 sudo apt update
