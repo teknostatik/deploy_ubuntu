@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
+# I test this on Ubuntu desktop and server (no flavours)
+
 echo "------------------------------------------------------"
 echo "Script to add software to Cubic builds - v0.3 May 2021"
 echo "------------------------------------------------------"

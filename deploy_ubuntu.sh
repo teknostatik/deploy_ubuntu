@@ -89,8 +89,17 @@ dropbox start -i
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
 
-# Add wallpaper randomiser
+# Set up i3 wallpaper
 
+mkdir /usr/share/wallpaper
+cd /usr/share/wallpaper
+sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
+sudo wget https://www.dropbox.com/s/mtlzx6v4hlf8x2p/73hkbyuzk0p41.png
+sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
+sudo wget https://www.dropbox.com/s/nlvt4x7n8yuxnd2/alena-aenami-away-1k.jpg
+sudo wget https://www.dropbox.com/s/ujqf1rpmdphcs1x/uwp825694.jpeg
+sudo wget https://www.dropbox.com/s/c8n7m3i2ruc84br/115104751-1a10a380-9f20-11eb-95b0-8950ac6381f0.png
+cd
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
 sudo chmod 755 /usr/local/bin/randomise_wallpaper
