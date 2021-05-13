@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Script to run afer installing Ubuntu WSL from the Windows app store. Comment out any sections that don't interest you.
-# Also works with Multipass (normal containers, not Ubuntu Core), although I have a better script for this now.
-echo "------------------------------------------------------------------"
-echo "Ubuntu configuration script for WSL and Multipass - v0.4, May 2021"
-echo "------------------------------------------------------------------"
+# Script to run afer installing Multipass (normal containers, not Ubuntu Core)
+
+echo "----------------------------------------------------------"
+echo "Ubuntu configuration script for Multipass - v0.1, May 2021"
+echo "----------------------------------------------------------"
 
 # Update software
 
@@ -12,7 +12,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu
+sudo apt install -y byobu xrdp gnome-session kitty firefox pcmanfm
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
@@ -35,3 +35,7 @@ sudo snap install bpytop
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias top='bpytop'" >> .bashrc
+
+# Set a password so we can use RDP
+
+sudo passwd ubuntu
