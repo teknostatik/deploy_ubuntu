@@ -18,7 +18,7 @@ sudo apt -y upgrade
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm lxde featherpad ranger irssi zsh
+sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm qutebrowser lxde featherpad ranger irssi zsh
 
 # Install some snaps
 
