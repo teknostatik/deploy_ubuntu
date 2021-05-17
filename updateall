@@ -2,7 +2,9 @@
 echo "------------------------------"
 echo "updateall v.0.3 for Containers"
 echo "------------------------------"
-#Run this as a normal user. Your admin password will be asked for if required.
+
+# Run this as a normal user. Your admin password will be asked for if required.
+
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
