@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Minimal privacy-focused build of Ubuntu for containers
 echo "------------------------------------------------------------"

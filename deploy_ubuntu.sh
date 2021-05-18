@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps).
 # Comment out any sections that don't interest you.

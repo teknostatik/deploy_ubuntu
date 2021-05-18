@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Deploy container for privacy
 echo "-------------------------------------------"

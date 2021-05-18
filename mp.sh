@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to set up multipass and then deploy a load of containers for various things
 echo "----------------------------------------------"

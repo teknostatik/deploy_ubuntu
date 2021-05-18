@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to run afer installing Multipass (normal containers, not Ubuntu Core)
 

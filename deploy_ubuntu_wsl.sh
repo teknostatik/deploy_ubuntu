@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to run afer installing Ubuntu WSL from the Windows app store. Comment out any sections that don't interest you.
 # Also works with Multipass (normal containers, not Ubuntu Core), although I have a better script for this now.

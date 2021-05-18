@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 # I test this on Ubuntu desktop and server (no flavours)
