@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Script to run after installing Ubuntu from my custom Cubic build
 # Most software will already be there - just need a few snaps
