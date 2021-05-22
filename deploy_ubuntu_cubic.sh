@@ -19,6 +19,8 @@ sudo apt upgrade -y
 # Install the i3 window manager and some basic utilities
 
 sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm featherpad qutebrowser xinit network-manager lxde zsh
+sudo add-apt-repository ppa:agornostal/ulauncher -y
+sudo apt install -y ulauncher
 
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install

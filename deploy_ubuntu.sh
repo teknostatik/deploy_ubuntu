@@ -19,6 +19,8 @@ sudo apt -y upgrade
 # Install the i3 window manager and some basic utilities
 
 sudo apt install -y i3 i3blocks feh arandr curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm qutebrowser lxde featherpad ranger irssi zsh
+sudo add-apt-repository ppa:agornostal/ulauncher -y
+sudo apt install -y ulauncher
 
 # Install some snaps
 
