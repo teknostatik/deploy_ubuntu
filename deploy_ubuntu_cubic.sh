@@ -34,7 +34,7 @@ wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 
-# Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
+# Install some packages to make remote shells more interesting
 
 sudo apt install -y neofetch fortune-mod cowsay
 
