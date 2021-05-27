@@ -60,7 +60,7 @@ sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
 
-mkdir /usr/share/wallpaper
+sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
 sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
 sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
