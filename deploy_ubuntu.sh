@@ -55,7 +55,7 @@ sudo apt install -y pandoc texlive texlive-latex-extra abiword
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission kdenlive
+sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install -y spotify-client
