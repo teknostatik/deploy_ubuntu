@@ -1,9 +1,11 @@
 #!/bin/sh
 
 # Minimal privacy-focused build of Ubuntu for containers
-echo "------------------------------------------------------------"
-echo "Ubuntu configuration script for Multipass - v0.1, March 2021"
-echo "------------------------------------------------------------"
+# This should also work on physical Ubuntu/Debian macines if you comment out the last line
+
+echo "--------------------------------------------------------"
+echo "Ubuntu configuration script for privacy - v0.2, May 2021"
+echo "--------------------------------------------------------"
 
 # Update software
 
@@ -11,8 +13,8 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu xrdp gnome-session kitty torbrowser-launcher pcmanfm onionshare zathura
-sudo snap install bpytop
+sudo apt install -y byobu xrdp gnome-session kitty torbrowser-launcher pcmanfm onionshare zathura htop
+
 
 # Install everything needed for ProtonVPN
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
@@ -37,8 +39,10 @@ echo "echo; neofetch;echo" >> .profile
 # Set some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
-echo "alias top='bpytop'" >> .bashrc
+echo "alias top='htop'" >> .bashrc
 
 # Set a password so we can use RDP
 
 sudo passwd ubuntu
+
+echo "All done! Hope you have a nice day!"
