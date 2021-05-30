@@ -4,8 +4,8 @@ Scripts for installing Ubuntu on new machines. It's based around my workflow, bu
 
 What this breaks down to is:
 
-* `deploy_ubuntu.sh` - script to run directly after installing Ubuntu (or Lubuntu) to add the software I use regularly. This include the i3 WM and a lot of text editing/multimedia applications.
-* `deploy_privacy.sh` - script to build a Multipass container and then call `deploy_ubuntu_privacy.sh` to build a tor-based setup
+* `deploy_ubuntu.sh` - script to run directly after installing Ubuntu (desktop or server) to add the software I use regularly. This include the i3 WM and a lot of text editing/multimedia applications.
+* `deploy_privacy.sh` - script to build a Multipass container and then call `deploy_ubuntu_privacy.sh` to build a tor-based setup. This is designed to build something _A bit_ like [Tails](https://tails.boum.org/) that can be added to a minimal Ubuntu or Debian installation.
 * `deploy_ubuntu_wsl.sh` - script for installing a minimal graphical desktop in a Multipass container
 * `updateall` - stripped down update script for Multipass containers
 * `mp.sh` - script to build a collection of Multipass containers for testing on different versions of Ubuntu
