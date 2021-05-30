@@ -96,7 +96,8 @@ dropbox start -i
 # Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
 
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
-sudo mv config ~/.config/i3/config
+mkdir .config/i3
+mv config ~/.config/i3/
 
 # Set up i3 wallpaper
 
