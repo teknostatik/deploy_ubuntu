@@ -26,9 +26,7 @@ sudo protonvpn init
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias mp='multipass list'" >> .bashrc
 echo "alias top='bpytop'" >> .bashrc
-echo "alias ls='ls -la'" >> .zshrc
-echo "alias mp='multipass list'" >> .zshrc
-echo "alias top='bpytop'" >> .zshrc
+
 
 # Build a container running the latest LTS for testing things on
 #  This will work on machines with 8GB of ram without destroying your system, despite what it suggests
