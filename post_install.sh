@@ -40,6 +40,7 @@ multipass stop ubuntu-lts
 multipass set client.primary-name=ubuntu-lts
 
 # Enable that container (and any future ones) to run graphical apps
+# Syntax is ssh -X -i ~/.ssh/multipassKey/id_rsa ubuntu@container_ip_address
 
 mkdir ~/.ssh/multipassKey
 sudo cp /var/snap/multipass/common/data/multipassd/ssh-keys/id_rsa ~/.ssh/multipassKey/id_rsa
