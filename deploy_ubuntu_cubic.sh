@@ -59,6 +59,7 @@ wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
+# These are downloaded from various places. Will try and find credits at some point. 
 
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
