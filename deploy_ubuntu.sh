@@ -18,7 +18,7 @@ sudo apt -y upgrade
 
 # Install the i3 window manager and some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr git curl byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm qutebrowser lxde featherpad ranger irssi zsh hexchat
+sudo apt install -y i3 i3blocks feh arandr git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm qutebrowser lxde featherpad ranger irssi zsh hexchat
 sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt install -y ulauncher
 
@@ -97,11 +97,14 @@ dropbox start -i
 # Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
 
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 mkdir .config/i3
+mkdir .config/i3/scripts
 mv config ~/.config/i3/
+mv lock.sh ~/.config/i3/scripts
 
 # Set up i3 wallpaper
-# These are downloaded from various places. Will try and find credits at some point. 
+# These are downloaded from various places. Will try and find credits at some point.
 
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
