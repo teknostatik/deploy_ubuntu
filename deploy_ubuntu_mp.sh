@@ -2,9 +2,9 @@
 
 # Script to run afer installing Multipass (normal containers, not Ubuntu Core)
 
-echo "----------------------------------------------------------"
-echo "Ubuntu configuration script for Multipass - v0.1, May 2021"
-echo "----------------------------------------------------------"
+echo "-----------------------------------------------------------"
+echo "Ubuntu configuration script for Multipass - v0.2, July 2021"
+echo "-----------------------------------------------------------"
 
 # Update software
 
@@ -12,7 +12,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu xrdp gnome-session kitty qutebrowser pcmanfm
+sudo apt install -y byobu xrdp i3 kitty firefox pcmanfm
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
