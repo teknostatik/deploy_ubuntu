@@ -20,7 +20,7 @@ sudo snap install multipass --classic
 # 4. Make this the primary container
 
 multipass launch -m 8G -d 20G lts --name ubuntu-lts
-multipass exec ubuntu-lts -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
+multipass exec ubuntu-lts -- sudo mv deploy_wsl.sh
 multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh
@@ -38,7 +38,7 @@ multipass stop ubuntu-lts-old
 
 # Then we will follow the same process for the latest build of the next version of Ubuntu
 
-multipass launch -m 8G -d 20G daily:21.04 --name ubuntu-devel
+multipass launch -m 8G -d 20G daily:21.10 --name ubuntu-devel
 multipass exec ubuntu-devel -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-devel -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-devel -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
