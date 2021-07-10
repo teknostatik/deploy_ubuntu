@@ -73,6 +73,9 @@ cd $HOME
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
 sudo chmod 755 /usr/local/bin/randomise_wallpaper
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
+sudo mv lock.sh /usr/local/bin/
+sudo chmod 755 /usr/local/bin/lock.sh 
 
 # Set up the post install script ready to run after initial login
 
