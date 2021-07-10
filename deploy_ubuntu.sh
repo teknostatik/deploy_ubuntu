@@ -99,9 +99,8 @@ dropbox start -i
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 mkdir .config/i3
-mkdir .config/i3/scripts
 mv config ~/.config/i3/
-mv lock.sh ~/.config/i3/scripts
+sudo mv lock.sh /usr/local/bin/
 
 # Set up i3 wallpaper
 # These are downloaded from various places. Will try and find credits at some point.
