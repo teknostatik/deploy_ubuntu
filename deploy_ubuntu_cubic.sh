@@ -75,7 +75,12 @@ sudo mv randomise_wallpaper /usr/local/bin/
 sudo chmod 755 /usr/local/bin/randomise_wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 sudo mv lock.sh /usr/local/bin/
-sudo chmod 755 /usr/local/bin/lock.sh 
+sudo chmod 755 /usr/local/bin/lock.sh
+
+# Let's replace the default Ubuntu wallpaper with one of these backgrounds
+
+sudo cp /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/default.png
+sudo cp /usr/share/wallpaper/rocket.png /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Set up the post install script ready to run after initial login
 
