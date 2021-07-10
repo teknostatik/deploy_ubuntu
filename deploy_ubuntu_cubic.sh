@@ -59,16 +59,16 @@ wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
-# These are downloaded from various places. Will try and find credits at some point. 
+# These are downloaded from various places. Will try and find credits at some point.
 
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
 sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
-sudo wget https://www.dropbox.com/s/j9mmfedrc8r9zba/231-2311974_big.jpg
 sudo wget https://www.dropbox.com/s/cljxhezhxuu3nce/background.png
 sudo wget https://www.dropbox.com/s/f2rkmbv13c8t769/1920x1080-dark-linux.png
 sudo wget https://www.dropbox.com/s/1i7g8u5h6whd5dv/3430638.png
 sudo wget https://www.dropbox.com/s/bkae9ethe3jqbod/jyrji9bnp3171.jpg
+sudo wget https://www.dropbox.com/s/idk05cia43lj5qb/rocket.png
 cd $HOME
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
