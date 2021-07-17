@@ -25,8 +25,7 @@ sudo apt install -y ulauncher
 # Install everything needed for ProtonVPN and Tor
 # See https://protonvpn.com/support/linux-vpn-tool/ for how to install
 
-sudo apt install -y openvpn dialog python3-pip python3-setuptools torbrowser-launcher onionshare
-sudo pip3 install protonvpn-cli
+sudo apt install -y torbrowser-launcher onionshare
 
 # Download a custom update script
 
