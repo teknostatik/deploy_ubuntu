@@ -3,9 +3,9 @@
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps).
 # Comment out any sections that don't interest you.
 
-echo "-----------------------------------------------------------"
-echo "General purpose Ubuntu installation script - v1.8, May 2021"
-echo "-----------------------------------------------------------"
+echo "------------------------------------------------------------"
+echo "General purpose Ubuntu installation script - v2.0, July 2021"
+echo "------------------------------------------------------------"
 
 # Standard error mitigation
 
@@ -16,11 +16,18 @@ set -euo pipefail
 sudo apt update
 sudo apt -y upgrade
 
-# Install the i3 window manager and some basic utilities
+# Install some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura remmina pcmanfm qutebrowser lxde featherpad ranger irssi zsh hexchat
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad
 sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt install -y ulauncher
+
+# Install and configure i3
+
+wget https://raw.githubusercontent.com/teknostatik/i3_config/main/install_i3.sh
+sudo mv install_i3.sh /usr/local/bin/
+sudo chmod 755 /usr/local/bin/install_i3.sh
+install_i3.sh
 
 # Install some snaps
 
@@ -90,29 +97,5 @@ sudo chown $USER -R ~/.ssh/multipassKey
 
 sudo apt install -y nautilus-dropbox
 dropbox start -i
-
-# Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
-
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
-mkdir .config/i3
-mv config ~/.config/i3/
-sudo mv lock.sh /usr/local/bin/
-
-# Set up i3 wallpaper
-# These are downloaded from various places. Will try and find credits at some point.
-
-sudo mkdir /usr/share/wallpaper
-cd /usr/share/wallpaper
-sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
-sudo wget https://www.dropbox.com/s/cljxhezhxuu3nce/background.png
-sudo wget https://www.dropbox.com/s/f2rkmbv13c8t769/1920x1080-dark-linux.png
-sudo wget https://www.dropbox.com/s/1i7g8u5h6whd5dv/3430638.png
-sudo wget https://www.dropbox.com/s/bkae9ethe3jqbod/jyrji9bnp3171.jpg
-sudo wget https://www.dropbox.com/s/idk05cia43lj5qb/rocket.png?dl=0
-cd $HOME
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
-sudo mv randomise_wallpaper /usr/local/bin/
-sudo chmod 755 /usr/local/bin/randomise_wallpaper
 
 echo "The script has now finished running."
