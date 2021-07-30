@@ -76,15 +76,13 @@ wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 sudo mv lock.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/lock.sh
 
-# These wallpapers would work well with Gnome; let's make them available
-
-cd /usr/share/wallpaper
-sudo cp * /usr/share/backgrounds/
-
-# Let's replace the default Ubuntu wallpaper with one of these new backgrounds
+# Let's replace the default Ubuntu wallpaper with a better background
 
 sudo cp /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/default.png
 sudo cp /usr/share/wallpaper/rocket.png /usr/share/backgrounds/warty-final-ubuntu.png
+
+# Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
+# My image includes all these; you may not want them though
 
 # Set up the post install script ready to run after initial login
 
