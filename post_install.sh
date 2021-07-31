@@ -17,16 +17,11 @@ set -euo pipefail
 sudo snap install multipass --classic
 sudo snap install bpytop unixbench atom
 
-# Set up ProtonVPN for the logged in user
-# See https://account.protonvpn.com/account#openvpn for credentials
-sudo protonvpn init
-
 # Add some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias mp='multipass list'" >> .bashrc
 echo "alias top='bpytop'" >> .bashrc
-
 
 # Build a container running the latest LTS for testing things on
 #  This will work on machines with 8GB of ram without destroying your system, despite what it suggests
