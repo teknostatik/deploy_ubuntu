@@ -5,7 +5,7 @@ echo "------------------------------"
 
 # Run this as a normal user. Your admin password will be asked for if required.
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get autoremove -y
 echo "The script has now finished running."
