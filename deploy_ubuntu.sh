@@ -39,6 +39,13 @@ sudo snap install unixbench
 
 sudo apt install -y torbrowser-launcher onionshare
 
+# ProtonVPN installation
+
+wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
+sudo apt install .protonvpn-stable-release_1.0.1-1_all.deb
+sudo apt-get update
+sudo apt-get install protonvpn-cli protonvpn
+
 # Download and install a custom update script
 
 wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
