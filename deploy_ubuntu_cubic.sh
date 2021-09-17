@@ -22,10 +22,16 @@ sudo apt install -y i3 i3blocks feh arandr git curl byobu synaptic xautolock tas
 sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt install -y ulauncher
 
-# Install everything needed for ProtonVPN and Tor
-# See https://protonvpn.com/support/linux-vpn-tool/ for how to install
+# Install everything needed for Tor
 
 sudo apt install -y torbrowser-launcher onionshare
+
+# ProtonVPN installation
+
+wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
+sudo apt install ./protonvpn-stable-release_1.0.1-1_all.deb
+sudo apt-get update
+sudo apt-get install protonvpn-cli protonvpn
 
 # Download a custom update script
 
