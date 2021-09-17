@@ -12,6 +12,6 @@ What this breaks down to is:
 * `mp.sh` - script to build a collection of Multipass containers for testing on different versions of Ubuntu
 * `deploy_ubuntu_cubic.sh` to automate my setup using Cubic to build the iso and `post_install.sh` to run directly afterwards to pull in snaps and other local configuration.
 
-Installation is fairly simple. Either build an iso using Cubic and `deploy_ubuntu_cubic.sh` or run `deploy_ubuntu.sh` on a standard Ubuntu install (tested on latest LTS and latest non-LTS versions - desktop and server).
+Installation is fairly simple. Either build an iso using Cubic and `deploy_ubuntu_cubic.sh` or run `deploy_ubuntu.sh` on a standard Ubuntu install (tested on 2-.-4, 21.04 and 21.10).
 
 All of these scripts are under fairly active development. I do like to tweak things a lot.
