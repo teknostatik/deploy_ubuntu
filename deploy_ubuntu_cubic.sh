@@ -68,8 +68,11 @@ sudo mv config /etc/i3/
 
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
-sudo wget https://www.dropbox.com/s/0yg8txbgw0ifqmg/9dy0gvxq7fl61.png
+sudo wget https://www.dropbox.com/s/65qlzytfq8c2thu/1920x1080.jpg
+sudo wget https://www.dropbox.com/s/xtb4ybjwywzj5f3/3840x2160.png
 sudo wget https://www.dropbox.com/s/f2rkmbv13c8t769/1920x1080-dark-linux.png
+sudo wget https://www.dropbox.com/s/tc8ejnibiat49t6/5120x2880.png
+sudo wget https://www.dropbox.com/s/uuh3exp1shb0h5o/IMG_8585-photivo-1-edit-crop-2160p.jpg
 sudo wget https://www.dropbox.com/s/idk05cia43lj5qb/rocket.png
 cd $HOME
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
@@ -82,7 +85,7 @@ sudo chmod 755 /usr/local/bin/lock.sh
 # Let's replace the default Ubuntu wallpaper with a better background
 
 sudo cp /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/default.png
-sudo cp /usr/share/wallpaper/rocket.png /usr/share/backgrounds/warty-final-ubuntu.png
+sudo cp /usr/share/wallpaper/1920x1080-dark-linux.png /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
 # My image includes all these; you may not want them though
