@@ -18,7 +18,7 @@ sudo apt -y upgrade
 
 # Install some basic utilities
 
-sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart
 sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt install -y ulauncher
 
