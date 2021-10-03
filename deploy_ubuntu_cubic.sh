@@ -3,9 +3,9 @@
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 # I test this on Ubuntu desktop and server (no flavours)
 
-echo "------------------------------------------------------"
-echo "Script to add software to Cubic builds - v0.3 May 2021"
-echo "------------------------------------------------------"
+echo "----------------------------------------------------------"
+echo "Script to add software to Cubic builds - v1.0 October 2021"
+echo "----------------------------------------------------------"
 
 # Standard error mitigation
 
@@ -64,7 +64,6 @@ wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
 sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
-# These are downloaded from various places. Will try and find credits at some point.
 
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
@@ -91,6 +90,7 @@ sudo cp /usr/share/wallpaper/1920x1080-dark-linux.png /usr/share/backgrounds/war
 # My image includes all these; you may not want them though
 
 # Set up the post install script ready to run after initial login
+# This will install snaps and anything else that requires being logged in to install
 
 wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/post_install.sh
 sudo mv post_install.sh /usr/local/bin/
