@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Script to set up multipass and then deploy a load of containers for various things
-echo "----------------------------------------------"
-echo "Multipass Deployment Script - v0.4, April 2021"
-echo "----------------------------------------------"
+echo "------------------------------------------------"
+echo "Multipass Deployment Script - v0.5, October 2021"
+echo "------------------------------------------------"
 
 # Standard error mitigation
 
@@ -38,7 +38,7 @@ multipass stop ubuntu-lts-old
 
 # Then we will follow the same process for the latest build of the next version of Ubuntu
 
-multipass launch -m 8G -d 20G daily:21.10 --name ubuntu-devel
+multipass launch -m 8G -d 20G daily:22.04 --name ubuntu-devel
 multipass exec ubuntu-devel -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-devel -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-devel -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
