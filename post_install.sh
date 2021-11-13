@@ -21,7 +21,7 @@ sudo snap install bpytop unixbench atom
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias mp='multipass list'" >> .bashrc
-echo "alias top='bpytop'" >> .bashrc
+echo "alias top='htop'" >> .bashrc
 
 # Build a container running the latest LTS for testing things on
 #  This will work on machines with 8GB of ram without destroying your system, despite what it suggests
