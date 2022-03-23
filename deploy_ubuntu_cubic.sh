@@ -2,9 +2,10 @@
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 # I test this on Ubuntu desktop and server (no flavours)
+# Updated for 22.02 LTS
 
 echo "--------------------------------------------------------"
-echo "Script to add software to Cubic builds - v1.1 march 2022"
+echo "Script to add software to Cubic builds - v1.1 March 2022"
 echo "--------------------------------------------------------"
 
 # Standard error mitigation
