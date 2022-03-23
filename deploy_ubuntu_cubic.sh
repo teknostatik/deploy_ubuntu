@@ -3,9 +3,9 @@
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 # I test this on Ubuntu desktop and server (no flavours)
 
-echo "----------------------------------------------------------"
-echo "Script to add software to Cubic builds - v1.0 October 2021"
-echo "----------------------------------------------------------"
+echo "--------------------------------------------------------"
+echo "Script to add software to Cubic builds - v1.1 march 2022"
+echo "--------------------------------------------------------"
 
 # Standard error mitigation
 
@@ -68,11 +68,12 @@ sudo mv config /etc/i3/
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
 sudo wget https://www.dropbox.com/s/65qlzytfq8c2thu/1920x1080.jpg
-sudo wget https://www.dropbox.com/s/xtb4ybjwywzj5f3/3840x2160.png
+sudo wget https://www.dropbox.com/s/mxlrmmlmz7cvcan/undefined%20-%20Imgur.png
 sudo wget https://www.dropbox.com/s/f2rkmbv13c8t769/1920x1080-dark-linux.png
-sudo wget https://www.dropbox.com/s/tc8ejnibiat49t6/5120x2880.png
-sudo wget https://www.dropbox.com/s/uuh3exp1shb0h5o/IMG_8585-photivo-1-edit-crop-2160p.jpg
+sudo wget https://www.dropbox.com/s/5g16o13gauzfabg/undefined%20-%20Imgur%281%29.jpg
+sudo wget https://www.dropbox.com/s/wr7zeamyfickq6z/undefined%20-%20Imgur%281%29.png
 sudo wget https://www.dropbox.com/s/idk05cia43lj5qb/rocket.png
+sudo wget https://www.dropbox.com/s/vev7hiio2zwff2w/undefined%20-%20Imgur%284%29.jpg
 cd $HOME
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
