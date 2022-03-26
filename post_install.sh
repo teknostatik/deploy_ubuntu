@@ -2,6 +2,7 @@
 
 # Script to run after installing Ubuntu from my custom Cubic build
 # Most software will already be there - just need a few snaps
+
 echo "-----------------------------------------------------------------"
 echo "Ubuntu Cubic post-install configuration script - v0.2, March 2022"
 echo "-----------------------------------------------------------------"
@@ -9,8 +10,6 @@ echo "-----------------------------------------------------------------"
 # Standard error mitigation
 
 set -euo pipefail
-
-# Update software
 
 # Install some snaps
 
