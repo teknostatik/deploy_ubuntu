@@ -2,9 +2,9 @@
 
 # Script to run after installing Ubuntu from my custom Cubic build
 # Most software will already be there - just need a few snaps
-echo "---------------------------------------------------------------"
-echo "Ubuntu Cubic post-install configuration script - v0.1, May 2021"
-echo "---------------------------------------------------------------"
+echo "-----------------------------------------------------------------"
+echo "Ubuntu Cubic post-install configuration script - v0.2, March 2022"
+echo "-----------------------------------------------------------------"
 
 # Standard error mitigation
 
@@ -15,7 +15,7 @@ set -euo pipefail
 # Install some snaps
 
 sudo snap install multipass --classic
-sudo snap install bpytop unixbench atom
+sudo snap install unixbench atom
 
 # Add some aliases
 
