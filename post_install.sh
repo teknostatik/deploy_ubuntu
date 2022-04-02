@@ -14,7 +14,6 @@ set -euo pipefail
 # Install some snaps
 
 sudo snap install multipass --classic
-sudo snap install unixbench atom
 
 # Add some aliases
 
