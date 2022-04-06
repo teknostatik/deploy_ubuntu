@@ -29,6 +29,13 @@ sudo mv install_i3.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/install_i3.sh
 install_i3.sh
 
+# Install Brave
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
 # Install some snaps
 
 sudo snap install multipass --classic
