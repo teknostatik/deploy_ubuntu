@@ -39,7 +39,6 @@ sudo apt install brave-browser
 # Install some snaps
 
 sudo snap install multipass --classic
-sudo snap install bpytop
 sudo snap install unixbench
 
 # Install everything needed for Tor
