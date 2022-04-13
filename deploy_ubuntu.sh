@@ -3,9 +3,9 @@
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps).
 # Comment out any sections that don't interest you.
 
-echo "-------------------------------------------------------------------"
-echo "General purpose Ubuntu installation script - v2.0.1, September 2021"
-echo "-------------------------------------------------------------------"
+echo "---------------------------------------------------------------"
+echo "General purpose Ubuntu installation script - v2.0.2, April 2022"
+echo "---------------------------------------------------------------"
 
 # Standard error mitigation
 
