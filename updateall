@@ -1,7 +1,7 @@
 #!/bin/sh
-echo "------------------------------"
-echo "updateall v.0.3 for Containers"
-echo "------------------------------"
+echo "-----------------------------------"
+echo "updateall v.0.3 for Debian & Ubuntu"
+echo "-----------------------------------"
 
 # Run this as a normal user. Your admin password will be asked for if required.
 
