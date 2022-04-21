@@ -19,8 +19,6 @@ sudo apt -y upgrade
 # Install some basic utilities
 
 sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https
-sudo add-apt-repository ppa:agornostal/ulauncher -y
-sudo apt install -y ulauncher
 
 # Install and configure i3
 
@@ -28,13 +26,6 @@ wget https://raw.githubusercontent.com/teknostatik/i3_config/main/install_i3.sh
 sudo mv install_i3.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/install_i3.sh
 install_i3.sh
-
-# Install Brave
-
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser
 
 # Install some snaps
 
@@ -73,9 +64,6 @@ sudo apt install -y pandoc texlive texlive-latex-extra abiword
 # Some of these are quite large so you might want to comment them out
 
 sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install -y spotify-client
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt install -y obs-studio
 
