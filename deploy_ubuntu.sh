@@ -63,7 +63,7 @@ sudo apt install -y pandoc texlive texlive-latex-extra abiword
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
+sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission kdenlive
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt install -y obs-studio
 
