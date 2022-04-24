@@ -18,7 +18,7 @@ sudo apt -y upgrade
 
 # Install some basic utilities
 
-sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https blueman
 
 # Install and configure i3
 
