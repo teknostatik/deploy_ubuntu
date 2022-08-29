@@ -18,7 +18,7 @@ sudo apt -y upgrade
 
 # Install some basic utilities
 
-sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https blueman
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https blueman ubuntu-restricted-extras
 
 # Install and configure i3
 
@@ -63,7 +63,7 @@ sudo apt install -y pandoc texlive texlive-latex-extra abiword
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission kdenlive
+sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt install -y obs-studio
 
