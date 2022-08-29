@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Script to set up multipass and then deploy a load of containers for various things
-echo "------------------------------------------------"
-echo "Multipass Deployment Script - v0.5, October 2021"
-echo "------------------------------------------------"
+echo "-----------------------------------------------"
+echo "Multipass Deployment Script - v0.6, August 2022"
+echo "-----------------------------------------------"
 
 # Standard error mitigation
 
@@ -27,18 +27,9 @@ multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh
 multipass stop ubuntu-lts
 multipass set client.primary-name=ubuntu-lts
 
-# We will then do the same for the LTS before
-
-multipass launch -m 8G -d 20G bionic --name ubuntu-lts-old
-multipass exec ubuntu-lts-old -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
-multipass exec ubuntu-lts-old -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
-multipass exec ubuntu-lts-old -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
-multipass exec ubuntu-lts-old -- deploy_ubuntu_wsl.sh
-multipass stop ubuntu-lts-old
-
 # Then we will follow the same process for the latest build of the next version of Ubuntu
 
-multipass launch -m 8G -d 20G daily:22.04 --name ubuntu-devel
+multipass launch -m 8G -d 20G daily:22.10 --name ubuntu-devel
 multipass exec ubuntu-devel -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-devel -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-devel -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
@@ -49,9 +40,9 @@ multipass stop ubuntu-devel
 
 # Next up let's try a snapcraft development and test environment. This bit needs work once I know more about it
 
-multipass launch snapcraft:core20  --name snapcraft-build
+multipass launch snapcraft:core22  --name snapcraft-build
 multipass stop snapcraft-build
-multipass launch core20 --name snapcraft-test
+multipass launch core22 --name snapcraft-test
 multipass stop snapcraft-test
 
 # Finally let's see what we now have:
