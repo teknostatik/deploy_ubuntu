@@ -74,26 +74,13 @@ sudo mv config /etc/i3/
 # Set up i3 wallpaper
 
 sudo mkdir /usr/share/wallpaper
-cd /usr/share/wallpaper
-sudo wget https://www.dropbox.com/s/65qlzytfq8c2thu/1920x1080.jpg
-sudo wget https://www.dropbox.com/s/mxlrmmlmz7cvcan/undefined%20-%20Imgur.png
-sudo wget https://www.dropbox.com/s/f2rkmbv13c8t769/1920x1080-dark-linux.png
-sudo wget https://www.dropbox.com/s/5g16o13gauzfabg/undefined%20-%20Imgur%281%29.jpg
-sudo wget https://www.dropbox.com/s/wr7zeamyfickq6z/undefined%20-%20Imgur%281%29.png
-sudo wget https://www.dropbox.com/s/idk05cia43lj5qb/rocket.png
-sudo wget https://www.dropbox.com/s/vev7hiio2zwff2w/undefined%20-%20Imgur%284%29.jpg
-cd $HOME
+sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
 sudo chmod 755 /usr/local/bin/randomise_wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 sudo mv lock.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/lock.sh
-
-# Let's replace the default Ubuntu wallpaper with a better background
-
-sudo cp /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/default.png
-sudo cp /usr/share/wallpaper/1920x1080-dark-linux.png /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
 # My image includes all these; you may not want them though
