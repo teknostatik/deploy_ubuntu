@@ -49,8 +49,6 @@ sudo apt install -y pandoc texlive texlive-latex-extra
 # Install some desktop applications for creating, editing and playing common media types
 
 sudo apt install -y gimp youtube-dl rhythmbox vlc transmission kdenlive
-sudo add-apt-repository ppa:obsproject/obs-studio -y
-sudo apt install -y obs-studio
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install -y spotify-client
@@ -74,6 +72,11 @@ sudo chmod 755 /usr/local/bin/randomise_wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
 sudo mv lock.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/lock.sh
+
+# Install Flatpak
+
+sudo apt install flatpak gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
 # My image includes all these; you may not want them though
