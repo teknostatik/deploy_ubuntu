@@ -4,9 +4,9 @@
 # I test this on Ubuntu desktop and server (no flavours)
 # Updated for 22.02 LTS
 
-echo "--------------------------------------------------------"
-echo "Script to add software to Cubic builds - v1.1 March 2022"
-echo "--------------------------------------------------------"
+echo "-------------------------------------------------------"
+echo "Script to add software to Cubic builds - v1.2 July 2023"
+echo "-------------------------------------------------------"
 
 # Standard error mitigation
 
@@ -25,13 +25,6 @@ sudo apt install -y i3 i3blocks feh arandr git curl byobu synaptic xautolock she
 
 sudo apt install -y torbrowser-launcher onionshare
 
-# ProtonVPN installation
-
-wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
-sudo apt install -y ./protonvpn-stable-release_1.0.1-1_all.deb
-sudo apt-get update
-sudo apt-get install -y protonvpn-cli protonvpn
-
 # Download a custom update script
 
 wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
@@ -48,10 +41,7 @@ sudo apt install -y pandoc texlive texlive-latex-extra
 
 # Install some desktop applications for creating, editing and playing common media types
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc transmission kdenlive
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install -y spotify-client
+sudo apt install -y gimp youtube-dl rhythmbox vlc transmission
 
 # Download and install Dropbox
 
@@ -64,7 +54,7 @@ sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
 
-sudo mkdir /usr/share/wallpaper
+# sudo mkdir /usr/share/wallpaper
 sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
