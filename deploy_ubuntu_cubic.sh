@@ -54,7 +54,7 @@ sudo mv config /etc/i3/
 
 # Set up i3 wallpaper
 
-# sudo mkdir /usr/share/wallpaper
+sudo mkdir /usr/share/wallpaper
 sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
 wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
 sudo mv randomise_wallpaper /usr/local/bin/
@@ -65,7 +65,7 @@ sudo chmod 755 /usr/local/bin/lock.sh
 
 # Install Flatpak
 
-sudo apt install flatpak gnome-software-plugin-flatpak
+sudo apt install -y flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
