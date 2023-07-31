@@ -57,15 +57,12 @@ echo "echo; neofetch;echo" >> .profile
 
 # Install the applications I use for writing, editing and previewing text
 
-sudo snap install --classic atom
 sudo apt install -y pandoc texlive texlive-latex-extra abiword
 
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
 
 sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
-sudo add-apt-repository ppa:obsproject/obs-studio -y
-sudo apt install -y obs-studio
 
 ## Add some aliases
 
