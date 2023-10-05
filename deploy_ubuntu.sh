@@ -4,7 +4,7 @@
 # Comment out any sections that don't interest you.
 
 echo "---------------------------------------------------------------"
-echo "General purpose Ubuntu installation script - v2.0.2, April 2022"
+echo "General purpose Ubuntu installation script - v2.1, October 2023"
 echo "---------------------------------------------------------------"
 
 # Standard error mitigation
@@ -38,8 +38,8 @@ sudo apt install -y torbrowser-launcher onionshare
 
 # ProtonVPN installation
 
-wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
-sudo apt install ./protonvpn-stable-release_1.0.1-1_all.deb
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb
+sudo apt install ./protonvpn-stable-release_1.0.3-2_all.deb
 sudo apt-get update
 sudo apt-get install -y protonvpn-cli protonvpn
 
