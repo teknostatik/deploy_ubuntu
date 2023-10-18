@@ -31,6 +31,12 @@ install_i3.sh
 
 sudo snap install multipass --classic
 sudo snap install unixbench
+sudo snap install tube-converter
+
+# Install Flatpak
+
+sudo apt install -y flatpak gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install everything needed for Tor
 
