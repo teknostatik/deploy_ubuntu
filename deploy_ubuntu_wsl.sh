@@ -12,7 +12,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu
+sudo apt install -y byobu htop
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
@@ -27,11 +27,7 @@ sudo apt install -y neofetch fortune-mod cowsay
 echo "echo; fortune | cowsay;echo" >> .profile
 echo "echo; neofetch;echo" >> .profile
 
-# Install bpytop - may fail on older verisons
-
-sudo snap install bpytop
-
 # Set some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
-echo "alias top='bpytop'" >> .bashrc
+echo "alias top='htop'" >> .bashrc
