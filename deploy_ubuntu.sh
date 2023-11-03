@@ -38,16 +38,29 @@ sudo snap install tube-converter
 sudo apt install -y flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# install vscode
+
+flatpak install flathub com.visualstudio.code -y
+
 # Install everything needed for Tor
 
 sudo apt install -y torbrowser-launcher onionshare
 
-# ProtonVPN installation
+# Set up git
+
+git config --global user.name "Andy Ferguson"
+git config --global user.email "teknostatik@protonmail.com"
+
+# install ProtonVPN
 
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb
-sudo apt install ./protonvpn-stable-release_1.0.3-2_all.deb
-sudo apt-get update
-sudo apt-get install -y protonvpn-cli protonvpn
+sudo dpkg -i protonvpn-stable-release_1.0.3-2_all.deb
+sudo apt update
+sudo apt install -y proton-vpn-gnome-desktop
+
+# Install Zerotier
+
+curl -s https://install.zerotier.com | sudo bash
 
 # Download and install a custom update script
 
