@@ -3,9 +3,9 @@
 # Script to run after installing Ubuntu from the desktop iso (with or without additional apps).
 # Comment out any sections that don't interest you.
 
-echo "---------------------------------------------------------------"
-echo "General purpose Ubuntu installation script - v2.1, October 2023"
-echo "---------------------------------------------------------------"
+echo "------------------------------------------"
+echo "General purpose Ubuntu installation script"
+echo "------------------------------------------"
 
 # Standard error mitigation
 
@@ -70,18 +70,20 @@ sudo chmod 755 /usr/local/bin/updateall
 
 # Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
 
-sudo apt install -y neofetch fortune-mod cowsay
+wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.8.7/fastfetch-linux-amd64.deb
+sudo dpkg -i fastfetch-linux-amd64.deb
+sudo apt install -y fortune-mod cowsay
 echo "echo; fortune | cowsay;echo" >> .profile
-echo "echo; neofetch;echo" >> .profile
+echo "echo; fastfetch;echo" >> .profile
 
 # Install the applications I use for writing, editing and previewing text
 
-sudo apt install -y pandoc texlive texlive-latex-extra abiword
+sudo apt install -y pandoc texlive texlive-latex-extra
 
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
 
-sudo apt install -y gimp youtube-dl rhythmbox vlc brasero sound-juicer transmission
+sudo apt install -y gimp rhythmbox vlc brasero sound-juicer transmission
 
 ## Add some aliases
 
