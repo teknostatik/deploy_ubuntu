@@ -95,11 +95,17 @@ sudo apt install -y pandoc texlive texlive-latex-extra
 
 sudo apt install -y gimp rhythmbox vlc brasero sound-juicer transmission
 
-## Add some aliases
+# Add some aliases
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias mp='multipass list'" >> .bashrc
 echo "alias top='htop'" >> .bashrc
+
+# Install drivers for Displaylink docking stations, such as the lenovo and Dell ones I use at home and work
+
+git clone https://github.com/AdnanHodzic/displaylink-debian.git
+cd displaylink-debian
+sudo ./displaylink-debian.sh
 
 # Build a container running the latest LTS for testing things on
 # This will work on a machine with 8GB of RAM, despite what it looks like
