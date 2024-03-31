@@ -11,6 +11,11 @@ echo "------------------------------------------"
 
 set -euo pipefail
 
+# Get a new sources.list that will alow installation of everything in this script
+
+https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/sources.list
+sudo mv sources.list /etc/apt/
+
 # Update software
 
 sudo apt update
