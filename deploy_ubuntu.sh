@@ -14,6 +14,7 @@ set -euo pipefail
 # Get a new sources.list that will alow installation of everything in this script
 
 https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/sources.list
+sudo mv /etc/apt/sources.list /etc/apt/sources.list_old
 sudo mv sources.list /etc/apt/
 
 # Update software
