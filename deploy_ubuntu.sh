@@ -11,7 +11,8 @@ echo "------------------------------------------"
 
 set -euo pipefail
 
-# Get a new sources.list that will alow installation of everything in this script
+# Get a new sources.list that will allow installation of everything in this script
+# Currently this is for version 23.10. If you're not running that, then this is not for you and you should comment out these lines.
 
 https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/sources.list
 sudo mv /etc/apt/sources.list /etc/apt/sources.list_old
