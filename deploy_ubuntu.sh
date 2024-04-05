@@ -113,6 +113,7 @@ echo "alias top='htop'" >> .bashrc
 git clone https://github.com/AdnanHodzic/displaylink-debian.git
 cd displaylink-debian
 sudo ./displaylink-debian.sh
+cd ..
 
 # Build a container running the latest LTS for testing things on
 # This will work on a machine with 8GB of RAM, despite what it looks like
