@@ -11,12 +11,15 @@ echo "------------------------------------------"
 
 set -euo pipefail
 
-# Get a new sources.list that will allow installation of everything in this script
-# Currently this is for version 23.10. If you're not running that, then this is not for you and you should comment out these lines.
+# Add repositories
 
-https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/sources.list
-sudo mv /etc/apt/sources.list /etc/apt/sources.list_old
-sudo mv sources.list /etc/apt/
+sudo apt install -y software-properties-common
+sudo add-apt-repository restricted universe multiverse
+
+# Remove some things we don't need
+
+sudo apt remove -y gnome-games
+sudo apt autoremove -y
 
 # Update software
 
@@ -25,7 +28,7 @@ sudo apt -y upgrade
 
 # Install some basic utilities
 
-sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart polybar htop apt-transport-https blueman ubuntu-restricted-extras
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart htop apt-transport-https blueman ubuntu-restricted-extras
 
 # Install and configure i3
 
@@ -70,8 +73,8 @@ git config --global user.email "andy@teknostatik.org"
 
 # install ProtonVPN
 
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb
-sudo dpkg -i protonvpn-stable-release_1.0.3-2_all.deb
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-3_all.deb
+sudo dpkg -i ./protonvpn-stable-release_1.0.3-3_all.deb
 sudo apt update
 sudo apt install -y proton-vpn-gnome-desktop
 
@@ -95,7 +98,7 @@ echo "echo; fastfetch;echo" >> .profile
 
 # Install the applications I use for writing, editing and previewing text
 
-sudo apt install -y pandoc texlive texlive-latex-extra
+sudo apt install -y pandoc texlive texlive-latex-extra abiword
 
 # Install some desktop applications for creating, editing and playing common media types
 # Some of these are quite large so you might want to comment them out
