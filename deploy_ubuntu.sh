@@ -28,7 +28,7 @@ sudo apt -y upgrade
 
 # Install some basic utilities
 
-sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart htop apt-transport-https blueman ubuntu-restricted-extras
+sudo apt install -y git curl scrot byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm lxde featherpad tasksel inxi needrestart htop apt-transport-https blueman ubuntu-restricted-extras flameshot
 
 # Install and configure i3
 
