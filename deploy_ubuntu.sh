@@ -114,20 +114,11 @@ install_vscode() {
 
 # Function to install and configure i3
 install_i3() {
-    sudo apt-get install -y i3 i3blocks feh arandr scrot xautolock barrier kitty imagemagick polybar caffeine copyq picom blueman pcmanfm
-    wget -q https://raw.githubusercontent.com/teknostatik/i3_config/main/config -O /tmp/i3_config
-    wget -q https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh -O /usr/local/bin/lock.sh
-    wget -q https://raw.githubusercontent.com/teknostatik/i3_config/main/kitty.conf -O /tmp/kitty.conf
-    wget -q https://raw.githubusercontent.com/teknostatik/i3_config/main/picom.conf -O /tmp/picom.conf
-    mkdir -p /home/$USER/.config/i3 /home/$USER/.config/kitty /home/$USER/.config/picom
-    mv /tmp/i3_config /home/$USER/.config/i3/config
-    mv /tmp/kitty.conf /home/$USER/.config/kitty/kitty.conf
-    mv /tmp/picom.conf /home/$USER/.config/picom/picom.conf
-    sudo install -D -o root -g root -m 755 /usr/local/bin/lock.sh /usr/local/bin/lock.sh
-    sudo mkdir -p /usr/share/wallpaper
-    sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
-    wget -q https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper -O /usr/local/bin/randomise_wallpaper
-    sudo chmod 755 /usr/local/bin/randomise_wallpaper
+    git clone https://github.com/teknostatik/i3_config.git
+    cd i3_config
+    chmod 755 install_i3.sh
+    ./install_i3.sh
+    cd
 }
 
 # Function to install tor
