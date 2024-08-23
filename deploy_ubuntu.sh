@@ -13,7 +13,6 @@ set -euo pipefail
 
 # Add repositories
 
-sudo apt install -y software-properties-common
 sudo add-apt-repository restricted universe multiverse
 
 # Remove some things we don't need
