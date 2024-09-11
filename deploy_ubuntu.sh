@@ -169,6 +169,30 @@ install_dropbox() {
     dropbox start -i
 }
 
+# Function to install Multipass
+install_multipass() {
+    sudo snap install multipass --classic
+    # Build a container running the latest LTS for testing things on
+    # This will work on a machine with 8GB of RAM, despite what it looks like
+    multipass launch -m 8G -d 20G lts --name ubuntu-lts
+    multipass exec ubuntu-lts -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
+    multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
+    multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
+    multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh
+    multipass stop ubuntu-lts
+    multipass set client.primary-name=ubuntu-lts
+    # Enable that container (and any future ones) to run graphical apps
+    # Syntax is ssh -X -i ~/.ssh/multipassKey/id_rsa ubuntu@container_ip_address
+    mkdir ~/.ssh/multipassKey
+    sudo cp /var/snap/multipass/common/data/multipassd/ssh-keys/id_rsa ~/.ssh/multipassKey/id_rsa
+    sudo chown $USER -R ~/.ssh/multipassKey
+}
+
+# Fuctiona to install Parabolic
+install_parabolic() {
+    sudo snap install tube-converter
+}
+
 # Prompt function
 prompt_install() {
     read -p "Do you want to install $1? (yes/no): " choice
@@ -186,29 +210,8 @@ prompt_install "flatpak" install_flatpak
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
+prompt_install "Multipass, with a default container" install_multipass
 prompt_install "Dropbox" install_dropbox
-
-# Install some snaps
-
-sudo snap install multipass --classic
-sudo snap install tube-converter
-
-# Build a container running the latest LTS for testing things on
-# This will work on a machine with 8GB of RAM, despite what it looks like
-
-multipass launch -m 8G -d 20G lts --name ubuntu-lts
-multipass exec ubuntu-lts -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
-multipass exec ubuntu-lts -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
-multipass exec ubuntu-lts -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
-multipass exec ubuntu-lts -- deploy_ubuntu_wsl.sh
-multipass stop ubuntu-lts
-multipass set client.primary-name=ubuntu-lts
-
-# Enable that container (and any future ones) to run graphical apps
-# Syntax is ssh -X -i ~/.ssh/multipassKey/id_rsa ubuntu@container_ip_address
-
-mkdir ~/.ssh/multipassKey
-sudo cp /var/snap/multipass/common/data/multipassd/ssh-keys/id_rsa ~/.ssh/multipassKey/id_rsa
-sudo chown $USER -R ~/.ssh/multipassKey
+prompt_install "Parabolic" install_parabolic
 
 echo "The script has now finished running."
