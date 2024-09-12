@@ -90,18 +90,6 @@ grep -qxF 'echo; fastfetch; echo' "$PROFILE" || echo 'echo; fastfetch; echo' >> 
 echo "alias ls='ls -la'" >> /home/$USER/.bashrc
 echo "alias top='htop'" >> /home/$USER/.bashrc
 
-# Configure git
-echo "We are now going to configure git"
-read -p "Enter your full name: " fullname
-read -p "Enter your email address: " email
-git config --global user.name "$fullname"
-git config --global user.email "$email"
-
-# Display the configured settings for git
-echo "Git has been configured with the following details:"
-git config --global --get user.name
-git config --global --get user.email
-
 # Some optional packages, which users can choose to install
 
 # Function to install vscode
@@ -196,6 +184,20 @@ install_parabolic() {
     sudo snap install tube-converter
 }
 
+# Function to install and configure Git
+install_git() {
+    sudo apt install -y git
+    echo "We are now going to configure git"
+    read -p "Enter your full name: " fullname
+    read -p "Enter your email address: " email
+    git config --global user.name "$fullname"
+    git config --global user.email "$email"
+    # Display the configured settings for git
+    echo "Git has been configured with the following details:"
+    git config --global --get user.name
+    git config --global --get user.email
+}
+
 # Prompt function
 prompt_install() {
     read -p "Do you want to install $1? (yes/no): " choice
@@ -216,5 +218,6 @@ prompt_install "Unixbench" install_unixbench
 prompt_install "Multipass, with a default container" install_multipass
 prompt_install "Dropbox" install_dropbox
 prompt_install "Parabolic" install_parabolic
+prompt_install "and configure Git" install_git
 
 echo "The script has now finished running."
