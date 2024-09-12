@@ -56,7 +56,8 @@ sudo apt install -y \
     barrier \
     kitty \
     imagemagick \
-    caffeine
+    caffeine \
+    eza
 
 # Download and install a custom update script
 
@@ -87,7 +88,7 @@ grep -qxF 'echo; fastfetch; echo' "$PROFILE" || echo 'echo; fastfetch; echo' >> 
 
 # Add some aliases
 
-echo "alias ls='ls -la'" >> /home/$USER/.bashrc
+echo "alias ls='eza -la'" >> /home/$USER/.bashrc
 echo "alias top='htop'" >> /home/$USER/.bashrc
 
 # Some optional packages, which users can choose to install
