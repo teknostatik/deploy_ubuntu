@@ -2,7 +2,7 @@
 
 # Script to add apps I use to a Cubic build (debs only, no snaps)
 # I test this on Ubuntu desktop and server (no flavours)
-# Updated for 22.02 LTS
+# Updated for 24.04 LTS
 
 echo "--------------------------------------"
 echo "Script to add software to Cubic builds"
@@ -12,84 +12,179 @@ echo "--------------------------------------"
 
 set -euo pipefail
 
-# Get a new sources.list that will allow installation of everything in this script
-# Currently this is for version 23.10. If you're not running that, then this is not for you and you should comment out these lines.
+# Add repositories
 
-https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/sources.list
-sudo mv /etc/apt/sources.list /etc/apt/sources.list_old
-sudo mv sources.list /etc/apt/
+sudo add-apt-repository restricted universe multiverse
+
+# Remove some things we don't need
+
+sudo apt remove -y gnome-games
+sudo apt autoremove -y
 
 # Update software
 
 sudo apt update
-sudo apt upgrade -y
+sudo apt -y upgrade
 
-# Install the i3 window manager and some basic utilities
+# Install some basic utilities
 
-sudo apt install -y i3 i3blocks feh arandr git curl byobu synaptic xautolock shellcheck barrier kitty zathura pcmanfm xinit inxi needrestart polybar scrot htop apt-transport-https blueman
+sudo apt install -y \
+    htop \
+    git \
+    byobu \
+    synaptic \
+    shellcheck \
+    zathura \
+    rsync \
+    curl \
+    ttf-mscorefonts-installer \
+    build-essential \
+    gimp \
+    rhythmbox \
+    vlc \
+    brasero \
+    sound-juicer \
+    lxappearance \
+    flameshot \
+    pandoc \
+    texlive \
+    texlive-latex-extra \
+    abiword \
+    ubuntu-restricted-extras \
+    remmina \
+    xrdp \
+    openssh-server \
+    barrier \
+    kitty \
+    imagemagick \
+    caffeine \
+    eza
 
-# Install everything needed for Tor
-
-sudo apt install -y torbrowser-launcher onionshare
-
-# Download a custom update script
+# Download and install a custom update script
 
 wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 
-# Install some packages to make remote shells more interesting
+# Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
 
-wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.8.7/fastfetch-linux-amd64.deb
-sudo dpkg -i fastfetch-linux-amd64.deb
-sudo apt install -y fortune-mod cowsay
+## Define variables
+FF_VERSION="2.21.0"
+FF_URL="https://github.com/fastfetch-cli/fastfetch/releases/download/${FF_VERSION}/fastfetch-linux-amd64.deb"
+TEMP_DEB="$(mktemp)" # Create a temporary file for the .deb download
 
-# Install the applications I use for converting text
+## Download and install Fastfetch
+wget -qO "$TEMP_DEB" "$FF_URL"
+sudo dpkg -i "$TEMP_DEB"
+rm -f "$TEMP_DEB" # Clean up temporary .deb file
 
-sudo apt install -y pandoc texlive texlive-latex-extra
+## Install fortune and cowsay
+sudo apt-get update
+sudo apt-get install -y fortune-mod cowsay
 
-# Install some desktop applications for creating, editing and playing common media types
+## Add commands to .profile if they don't already exist
+PROFILE="$HOME/.profile"
+grep -qxF 'echo; fortune | cowsay; echo' "$PROFILE" || echo 'echo; fortune | cowsay; echo' >> "$PROFILE"
+grep -qxF 'echo; fastfetch; echo' "$PROFILE" || echo 'echo; fastfetch; echo' >> "$PROFILE"
 
-sudo apt install -y gimp rhythmbox vlc transmission
+# Add some aliases
 
-# Download and install Dropbox
+echo "alias ls='eza -la'" >> /home/$USER/.bashrc
+echo "alias top='htop'" >> /home/$USER/.bashrc
 
-sudo apt install -y nautilus-dropbox
+# Some optional packages, which users can choose to install
 
-# Set up i3. Comment this out if you want to use your own config file or build your config from scratch.
+# Function to install vscode
+install_vscode() {
+    sudo apt-get install -y gpg
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/packages.microsoft.gpg > /dev/null
+    echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+    sudo apt-get install -y apt-transport-https
+    sudo apt-get update
+    sudo apt-get install -y code
+}
 
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
-sudo mv config /etc/i3/
+# Function to install and configure i3
+install_i3() {
+    wget https://raw.githubusercontent.com/teknostatik/i3_config/main/config
+    sudo mv config /etc/i3/
+    sudo mkdir /usr/share/wallpaper
+    sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
+    wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
+    sudo mv randomise_wallpaper /usr/local/bin/
+    sudo chmod 755 /usr/local/bin/randomise_wallpaper
+    wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
+    sudo mv lock.sh /usr/local/bin/
+    sudo chmod 755 /usr/local/bin/lock.sh
+}
 
-# Set up i3 wallpaper
+# Function to install tor
+install_tor() {
+    sudo apt-get install -y torbrowser-launcher onionshare
+}
 
-sudo mkdir /usr/share/wallpaper
-sudo cp -R /usr/share/backgrounds/* /usr/share/wallpaper
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/randomise_wallpaper
-sudo mv randomise_wallpaper /usr/local/bin/
-sudo chmod 755 /usr/local/bin/randomise_wallpaper
-wget https://raw.githubusercontent.com/teknostatik/i3_config/main/lock.sh
-sudo mv lock.sh /usr/local/bin/
-sudo chmod 755 /usr/local/bin/lock.sh
+# Function to install DisplayLink
+install_displaylink() {
+    git clone https://github.com/AdnanHodzic/displaylink-debian.git /tmp/displaylink-debian
+    echo "Do not reboot when given the option. You will need to reboot before trying to use your docking station."
+    sudo /tmp/displaylink-debian/displaylink-debian.sh
+    #wget -q https://raw.githubusercontent.com/teknostatik/debian/master/20-displaylink.conf -O /etc/X11/xorg.conf.d/20-displaylink.conf
+    rm -rf /tmp/displaylink-debian
+}
 
-# Install Flatpak
+# Function to install Flatpak
+install_flatpak() {
+    sudo apt-get install -y flatpak gnome-software-plugin-flatpak
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+}
 
-sudo apt install -y flatpak gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Function to install ProtonVPN
+install_protonvpn() {
+    wget -q https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-3_all.deb -O /tmp/protonvpn.deb
+    sudo dpkg -i /tmp/protonvpn.deb
+    sudo apt-get update
+    sudo apt-get install -y proton-vpn-gnome-desktop
+    rm /tmp/protonvpn.deb
+}
 
-# install vscode
+# Function to install Zerotier 
+install_zerotier() {
+    curl -s https://install.zerotier.com | sudo bash
+}
 
-sudo apt-get install gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt update
-sudo apt install code
+# Function to install Unixbench
+install_unixbench() {
+    sudo apt install -y libx11-dev libgl1-mesa-dev libxext-dev perl perl-modules make git
+    git clone https://github.com/kdlucas/byte-unixbench.git
+# uncomment tne next 2 lines to run the benchmark now
+# cd byte-unixbench/UnixBench/
+# ./Run
+}
 
+# Fuction to install Dropbox
+install_dropbox() {
+    sudo apt install -y nautilus-dropbox
+    dropbox start -i
+}
 
-# Manual steps are to install Teams, Zoom, Chrome, Brave and anything else non-free if required
-# My image includes all these; you may not want them though
+# Prompt function
+prompt_install() {
+    read -p "Do you want to install $1? (yes/no): " choice
+    if [[ "$choice" == "yes" ]]; then
+        $2
+    fi
+}
+
+# Main script to prompt user and call installation functions
+prompt_install "Visual Studio Code" install_vscode
+prompt_install "i3 tiling window manager" install_i3
+prompt_install "Tor browser and Onionshare" install_tor
+prompt_install "DisplayLink docking station support" install_displaylink
+prompt_install "Flatpak" install_flatpak
+prompt_install "ProtonVPN" install_protonvpn
+prompt_install "Zerotier" install_zerotier
+prompt_install "Unixbench" install_unixbench
+prompt_install "Dropbox" install_dropbox
 
 # Set up the post install script ready to run after initial login
 # This will install snaps and anything else that requires being logged in to install
