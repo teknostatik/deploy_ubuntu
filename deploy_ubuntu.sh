@@ -66,7 +66,7 @@ sudo chmod 755 /usr/local/bin/updateall
 # Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
 
 ## Define variables
-FF_VERSION="2.21.0"
+FF_VERSION="2.24.0"
 FF_URL="https://github.com/fastfetch-cli/fastfetch/releases/download/${FF_VERSION}/fastfetch-linux-amd64.deb"
 TEMP_DEB="$(mktemp)" # Create a temporary file for the .deb download
 
