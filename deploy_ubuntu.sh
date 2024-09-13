@@ -36,7 +36,6 @@ sudo apt install -y \
     zathura \
     rsync \
     curl \
-    ttf-mscorefonts-installer \
     build-essential \
     gimp \
     rhythmbox \
@@ -49,7 +48,6 @@ sudo apt install -y \
     texlive \
     texlive-latex-extra \
     abiword \
-    ubuntu-restricted-extras \
     remmina \
     xrdp \
     openssh-server \
@@ -199,6 +197,13 @@ install_git() {
     git config --global --get user.email
 }
 
+# Function to install non-free codecs and fonts
+install_nonfree() {
+    sudo apt install -y \
+    ttf-mscorefonts-installer \
+    ubuntu-restricted-extras
+}
+
 # Prompt function
 prompt_install() {
     read -p "Do you want to install $1? (yes/no): " choice
@@ -220,5 +225,6 @@ prompt_install "Multipass, with a default container" install_multipass
 prompt_install "Dropbox" install_dropbox
 prompt_install "Parabolic" install_parabolic
 prompt_install "and configure Git" install_git
+prompt_install "Non-free codecs and fonts" install_nonfree
 
 echo "The script has now finished running."
