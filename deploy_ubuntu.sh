@@ -55,6 +55,7 @@ sudo apt install -y \
     kitty \
     imagemagick \
     caffeine \
+    pcmanfm \
     eza
 
 # Download and install a custom update script
@@ -115,11 +116,9 @@ install_tor() {
 
 # Function to install DisplayLink
 install_displaylink() {
-    git clone https://github.com/AdnanHodzic/displaylink-debian.git /tmp/displaylink-debian
-    echo "Do not reboot when given the option. You will need to reboot before trying to use your docking station."
-    sudo /tmp/displaylink-debian/displaylink-debian.sh
-    #wget -q https://raw.githubusercontent.com/teknostatik/debian/master/20-displaylink.conf -O /etc/X11/xorg.conf.d/20-displaylink.conf
-    rm -rf /tmp/displaylink-debian
+    git clone https://github.com/AdnanHodzic/displaylink-debian.git
+    cd displaylink-debian
+    sudo ./displaylink-debian.sh
 }
 
 # Function to install Flatpak
@@ -200,7 +199,7 @@ prompt_install() {
 prompt_install "Visual Studio Code" install_vscode
 prompt_install "i3 tiling window manager" install_i3
 prompt_install "Tor browser and Onionshare" install_tor
-#prompt_install "DisplayLink docking station support" install_displaylink
+prompt_install "DisplayLink docking station support" install_displaylink
 prompt_install "Flatpak" install_flatpak
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
