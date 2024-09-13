@@ -60,7 +60,7 @@ sudo apt install -y \
 
 # Download and install a custom update script
 
-wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall -O /usr/local/bin/updateall
+sudo wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall -O /usr/local/bin/updateall
 sudo chmod 755 /usr/local/bin/updateall
 
 # Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
