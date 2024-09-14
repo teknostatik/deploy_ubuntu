@@ -37,7 +37,6 @@ sudo apt install -y \
     zathura \
     rsync \
     curl \
-    ttf-mscorefonts-installer \
     build-essential \
     gimp \
     rhythmbox \
@@ -50,7 +49,6 @@ sudo apt install -y \
     texlive \
     texlive-latex-extra \
     abiword \
-    ubuntu-restricted-extras \
     remmina \
     xrdp \
     openssh-server \
@@ -58,6 +56,7 @@ sudo apt install -y \
     kitty \
     imagemagick \
     caffeine \
+    pcmanfm \
     eza
 
 # Download and install a custom update script
@@ -125,11 +124,9 @@ install_tor() {
 
 # Function to install DisplayLink
 install_displaylink() {
-    git clone https://github.com/AdnanHodzic/displaylink-debian.git /tmp/displaylink-debian
-    echo "Do not reboot when given the option. You will need to reboot before trying to use your docking station."
-    sudo /tmp/displaylink-debian/displaylink-debian.sh
-    #wget -q https://raw.githubusercontent.com/teknostatik/debian/master/20-displaylink.conf -O /etc/X11/xorg.conf.d/20-displaylink.conf
-    rm -rf /tmp/displaylink-debian
+    git clone https://github.com/AdnanHodzic/displaylink-debian.git
+    cd displaylink-debian
+    sudo ./displaylink-debian.sh
 }
 
 # Function to install Flatpak
@@ -140,7 +137,7 @@ install_flatpak() {
 
 # Function to install ProtonVPN
 install_protonvpn() {
-    wget -q https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-3_all.deb -O /tmp/protonvpn.deb
+    wget -q https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb -O /tmp/protonvpn.deb
     sudo dpkg -i /tmp/protonvpn.deb
     sudo apt-get update
     sudo apt-get install -y proton-vpn-gnome-desktop
@@ -161,11 +158,19 @@ install_unixbench() {
 # ./Run
 }
 
+# Function to install non-free codecs and fonts
+install_nonfree() {
+    sudo apt install -y \
+    ttf-mscorefonts-installer \
+    ubuntu-restricted-extras
+}
+
 # Fuction to install Dropbox
 install_dropbox() {
     sudo apt install -y nautilus-dropbox
     dropbox start -i
 }
+
 
 # Prompt function
 prompt_install() {
@@ -184,6 +189,7 @@ prompt_install "Flatpak" install_flatpak
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
+prompt_install "Non-free codecs and fonts" install_nonfree
 prompt_install "Dropbox" install_dropbox
 
 # Set up the post install script ready to run after initial login
