@@ -119,6 +119,8 @@ install_displaylink() {
     git clone https://github.com/AdnanHodzic/displaylink-debian.git
     cd displaylink-debian
     sudo ./displaylink-debian.sh
+    wget -q https://raw.githubusercontent.com/teknostatik/debian/master/20-displaylink.conf -O /etc/X11/xorg.conf.d/20-displaylink.conf
+    cd ..
 }
 
 # Function to install Flatpak
