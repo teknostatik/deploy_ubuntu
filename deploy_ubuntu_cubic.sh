@@ -65,10 +65,10 @@ wget https://raw.githubusercontent.com/teknostatik/updateall/master/updateall
 sudo mv updateall /usr/local/bin/
 sudo chmod 755 /usr/local/bin/updateall
 
-# Install some packages to make remote shells more interesting and then add them to the profile for the logged in user
+# Install some packages to make remote shells more interesting
 
 ## Define variables
-FF_VERSION="2.21.0"
+FF_VERSION="2.24.0"
 FF_URL="https://github.com/fastfetch-cli/fastfetch/releases/download/${FF_VERSION}/fastfetch-linux-amd64.deb"
 TEMP_DEB="$(mktemp)" # Create a temporary file for the .deb download
 
@@ -80,16 +80,6 @@ rm -f "$TEMP_DEB" # Clean up temporary .deb file
 ## Install fortune and cowsay
 sudo apt-get update
 sudo apt-get install -y fortune-mod cowsay
-
-## Add commands to .profile if they don't already exist
-PROFILE="$HOME/.profile"
-grep -qxF 'echo; fortune | cowsay; echo' "$PROFILE" || echo 'echo; fortune | cowsay; echo' >> "$PROFILE"
-grep -qxF 'echo; fastfetch; echo' "$PROFILE" || echo 'echo; fastfetch; echo' >> "$PROFILE"
-
-# Add some aliases
-
-echo "alias ls='eza -la'" >> /home/$USER/.bashrc
-echo "alias top='htop'" >> /home/$USER/.bashrc
 
 # Some optional packages, which users can choose to install
 
@@ -168,7 +158,6 @@ install_nonfree() {
 # Fuction to install Dropbox
 install_dropbox() {
     sudo apt install -y nautilus-dropbox
-    dropbox start -i
 }
 
 
