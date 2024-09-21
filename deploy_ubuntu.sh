@@ -189,6 +189,14 @@ install_nonfree() {
     ubuntu-restricted-extras
 }
 
+# Function to install, but not configure, QMK
+install_qmk() {
+    sudo apt install -y git pipx
+    pipx install qmk
+    pipx ensurepath
+}
+
+
 # Prompt function
 prompt_install() {
     read -p "Do you want to install $1? (yes/no): " choice
@@ -209,6 +217,7 @@ prompt_install "Multipass" install_multipass
 prompt_install "Parabolic" install_parabolic
 prompt_install "and configure Git" install_git
 prompt_install "Non-free codecs and fonts" install_nonfree
+prompt_install "QMK" install_qmk
 prompt_install "Dropbox" install_dropbox
 prompt_install "DisplayLink docking station support" install_displaylink
 
