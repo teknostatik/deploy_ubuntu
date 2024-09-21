@@ -160,6 +160,13 @@ install_dropbox() {
     sudo apt install -y nautilus-dropbox
 }
 
+# Function to install, but not configure, QMK
+install_qmk() {
+    sudo apt install -y git pipx
+    pipx install qmk
+    pipx ensurepath
+}
+
 
 # Prompt function
 prompt_install() {
@@ -178,6 +185,7 @@ prompt_install "Flatpak" install_flatpak
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
+prompt_install "QMK" install_qmk
 prompt_install "Non-free codecs and fonts" install_nonfree
 prompt_install "Dropbox" install_dropbox
 
