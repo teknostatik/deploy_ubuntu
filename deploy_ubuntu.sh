@@ -196,6 +196,11 @@ install_qmk() {
     pipx ensurepath
 }
 
+# Function to install and enable UFw
+install_ufw() {
+    sudo apt install -y ufw
+    sudo ufw enable
+}
 
 # Prompt function
 prompt_install() {
@@ -217,6 +222,7 @@ prompt_install "Multipass" install_multipass
 prompt_install "Parabolic" install_parabolic
 prompt_install "and configure Git" install_git
 prompt_install "Non-free codecs and fonts" install_nonfree
+prompt_install "and enable UFW (uncomplicated firewall)" install_ufw
 prompt_install "QMK" install_qmk
 prompt_install "Dropbox" install_dropbox
 prompt_install "DisplayLink docking station support" install_displaylink
