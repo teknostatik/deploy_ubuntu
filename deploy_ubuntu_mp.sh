@@ -2,9 +2,9 @@
 
 # Script to run afer installing Multipass (normal containers, not Ubuntu Core)
 
-echo "-----------------------------------------------------------"
-echo "Ubuntu configuration script for Multipass - v0.9, July 2023"
-echo "-----------------------------------------------------------"
+echo "------------------------------------------"
+echo "Ubuntu configuration script for Multipass "
+echo "------------------------------------------"
 
 # Update software
 
@@ -12,7 +12,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu xrdp lxde kitty firefox pcmanfm htop
+sudo apt install -y byobu htop
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 
@@ -31,7 +31,3 @@ echo "echo; neofetch;echo" >> .profile
 
 echo "alias ls='ls -la'" >> .bashrc
 echo "alias top='htop'" >> .bashrc
-
-# Set a password so we can use RDP
-
-sudo passwd ubuntu
