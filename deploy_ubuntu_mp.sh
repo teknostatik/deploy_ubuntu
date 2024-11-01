@@ -12,7 +12,7 @@ sudo apt update
 
 # Install some basic utilities
 
-sudo apt install -y byobu htop
+sudo apt install -y byobu htop net-tools
 
 # Download a custom update script and then use it to get software updates and do some cleaning up
 

@@ -56,6 +56,7 @@ sudo apt install -y \
     imagemagick \
     caffeine \
     pcmanfm \
+    net-tools \
     eza
 
 # Download and install a custom update script
