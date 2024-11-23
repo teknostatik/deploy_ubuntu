@@ -33,7 +33,6 @@ sudo apt install -y \
     byobu \
     synaptic \
     shellcheck \
-    zathura \
     rsync \
     curl \
     build-essential \
@@ -42,20 +41,13 @@ sudo apt install -y \
     vlc \
     brasero \
     sound-juicer \
-    lxappearance \
     flameshot \
     pandoc \
     texlive \
     texlive-latex-extra \
-    abiword \
     remmina \
-    xrdp \
-    openssh-server \
-    barrier \
-    kitty \
     imagemagick \
     caffeine \
-    pcmanfm \
     net-tools \
     eza
 
