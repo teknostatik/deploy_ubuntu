@@ -49,6 +49,8 @@ sudo apt install -y \
     imagemagick \
     caffeine \
     net-tools \
+    gnome-shell-extensions \
+    gnome-tweaks \
     eza
 
 # Download and install a custom update script
