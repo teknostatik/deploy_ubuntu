@@ -147,7 +147,7 @@ install_unixbench() {
 # ./Run
 }
 
-# Fuction to install Dropbox
+# Function to install Dropbox
 install_dropbox() {
     sudo apt install -y nautilus-dropbox
     dropbox start -i
@@ -158,7 +158,7 @@ install_multipass() {
     sudo snap install multipass --classic
 }
 
-# Fuctiona to install Parabolic
+# Function to install Parabolic
 install_parabolic() {
     sudo snap install tube-converter
 }
@@ -191,7 +191,7 @@ install_qmk() {
     pipx ensurepath
 }
 
-# Function to install and enable UFw
+# Function to install and enable UFW
 install_ufw() {
     sudo apt install -y ufw
     sudo ufw enable
