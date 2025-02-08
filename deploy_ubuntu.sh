@@ -41,6 +41,7 @@ sudo apt install -y \
     vlc \
     brasero \
     sound-juicer \
+    cdparanoia \
     flameshot \
     pandoc \
     texlive \
