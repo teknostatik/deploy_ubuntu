@@ -36,22 +36,7 @@ sudo apt install -y \
     rsync \
     curl \
     build-essential \
-    gimp \
-    rhythmbox \
-    vlc \
-    brasero \
-    sound-juicer \
-    cdparanoia \
-    flameshot \
-    pandoc \
-    texlive \
-    texlive-latex-extra \
-    remmina \
-    imagemagick \
-    caffeine \
     net-tools \
-    gnome-shell-extensions \
-    gnome-tweaks \
     eza
 
 # Download and install a custom update script
@@ -85,6 +70,26 @@ echo "alias ls='eza -la'" >> /home/$USER/.bashrc
 echo "alias top='htop'" >> /home/$USER/.bashrc
 
 # Some optional packages, which users can choose to install
+
+# Function to install some optional packages
+install_more_apps() {
+    sudo apt install -y \
+    gimp \
+    rhythmbox \
+    vlc \
+    brasero \
+    sound-juicer \
+    cdparanoia \
+    flameshot \
+    pandoc \
+    texlive \
+    texlive-latex-extra \
+    remmina \
+    imagemagick \
+    caffeine \
+    gnome-shell-extensions \
+    gnome-tweaks
+}
 
 # Function to install vscode
 install_vscode() {
@@ -213,6 +218,7 @@ prompt_install() {
 }
 
 # Main script to prompt user and call installation functions
+prompt_install "More software package suitable for using with Gnome" install_more_apps
 prompt_install "Visual Studio Code" install_vscode
 prompt_install "i3 tiling window manager" install_i3
 prompt_install "Tor browser and Onionshare" install_tor
