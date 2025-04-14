@@ -218,7 +218,7 @@ prompt_install() {
 }
 
 # Main script to prompt user and call installation functions
-prompt_install "More software package suitable for using with Gnome" install_more_apps
+prompt_install "More software packages suitable for using with Gnome" install_more_apps
 prompt_install "Visual Studio Code" install_vscode
 prompt_install "i3 tiling window manager" install_i3
 prompt_install "Tor browser and Onionshare" install_tor
@@ -226,8 +226,8 @@ prompt_install "Flatpak" install_flatpak
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
-prompt_install "Multipass" install_multipass
-prompt_install "Parabolic" install_parabolic
+prompt_install "Multipass (snap)" install_multipass
+prompt_install "Parabolic (snap)" install_parabolic
 prompt_install "and configure Git" install_git
 prompt_install "Non-free codecs and fonts" install_nonfree
 prompt_install "and enable UFW (uncomplicated firewall)" install_ufw
