@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Script to set up multipass and then deploy a load of containers for various things
-echo "-----------------------------------------------"
-echo "Multipass Deployment Script - v0.6, August 2022"
-echo "-----------------------------------------------"
+echo "---------------------------"
+echo "Multipass Deployment Script"
+echo "--------------- -----------"
 
 # Standard error mitigation
 
