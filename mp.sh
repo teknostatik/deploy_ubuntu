@@ -29,7 +29,7 @@ multipass set client.primary-name=ubuntu-lts
 
 # Then we will follow the same process for the latest build of the next version of Ubuntu
 
-multipass launch -m 8G -d 20G daily:22.10 --name ubuntu-devel
+multipass launch -m 8G -d 20G daily:25.04 --name ubuntu-devel
 multipass exec ubuntu-devel -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-devel -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-devel -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
@@ -40,9 +40,9 @@ multipass stop ubuntu-devel
 
 # Next up let's try a snapcraft development and test environment. This bit needs work once I know more about it
 
-multipass launch snapcraft:core22  --name snapcraft-build
+multipass launch snapcraft:core24  --name snapcraft-build
 multipass stop snapcraft-build
-multipass launch core22 --name snapcraft-test
+multipass launch core24 --name snapcraft-test
 multipass stop snapcraft-test
 
 # Finally let's see what we now have:
