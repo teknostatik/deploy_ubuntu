@@ -68,7 +68,6 @@ grep -qxF 'echo; fastfetch; echo' "$PROFILE" || echo 'echo; fastfetch; echo' >> 
 # Add some aliases
 echo "alias ls='eza -la'" >> /home/$USER/.bashrc
 echo "alias top='htop'" >> /home/$USER/.bashrc
-echo "alias find_windows_key='sudo hexdump -s 56 -e '"MSDM key: " /29 "%s\n"' /sys/firmware/acpi/tables/MSDM'" >> /home/$USER/.bashrc
 
 # Some optional packages, which users can choose to install
 
