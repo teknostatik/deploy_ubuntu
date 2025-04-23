@@ -231,7 +231,7 @@ prompt_install "Parabolic (snap)" install_parabolic
 prompt_install "and configure Git" install_git
 prompt_install "Non-free codecs and fonts" install_nonfree
 prompt_install "and enable UFW (uncomplicated firewall)" install_ufw
-prompt_install ", but don't configure, QMK" install_qmk
+prompt_install "but don't configure, QMK" install_qmk
 prompt_install "DisplayLink docking station support" install_displaylink
 prompt_install "The right version of Fuse to get Appimages to work" install_fuse2
 prompt_install "Dropbox" install_dropbox
