@@ -208,6 +208,11 @@ install_fuse2() {
     sudo apt install -y libfuse2t64
 }
 
+# Function to install smartinstall
+install_smartinstall() {
+    cp smartinstall.sh /usr/local/bin/smartinstall
+    chmod 755 /usr/local/bin/smartinstall
+}
 
 # Prompt function
 prompt_install() {
@@ -223,6 +228,7 @@ prompt_install "Visual Studio Code" install_vscode
 prompt_install "i3 tiling window manager and a sensible default configuration" install_i3
 prompt_install "Tor browser and Onionshare for browsing and sharing files on Tor" install_tor
 prompt_install "and configure Flatpak" install_flatpak
+prompt_install "smartinstall, a script for installing packages using apt, snap, or flatpak" install_smartinstall
 prompt_install "ProtonVPN" install_protonvpn
 prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
