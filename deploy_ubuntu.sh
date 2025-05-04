@@ -210,8 +210,8 @@ install_fuse2() {
 
 # Function to install smartinstall
 install_smartinstall() {
-    cp smartinstall.sh /usr/local/bin/smartinstall
-    chmod 755 /usr/local/bin/smartinstall
+    sudo cp smartinstall.sh /usr/local/bin/smartinstall
+    sudo chmod 755 /usr/local/bin/smartinstall
 }
 
 # Prompt function
