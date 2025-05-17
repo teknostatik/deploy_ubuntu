@@ -169,6 +169,11 @@ install_parabolic() {
     sudo snap install tube-converter
 }
 
+# Function to install Spotify
+install_spotify() {
+    sudo snap install spotify
+}
+
 # Function to install and configure Git
 install_git() {
     sudo apt install -y git
@@ -234,6 +239,7 @@ prompt_install "Zerotier" install_zerotier
 prompt_install "Unixbench" install_unixbench
 prompt_install "Multipass (snap)" install_multipass
 prompt_install "Parabolic (snap)" install_parabolic
+prompt_install "Spotify (snap)" install_spotify
 prompt_install "and configure Git" install_git
 prompt_install "Non-free codecs and fonts" install_nonfree
 prompt_install "and enable UFW (uncomplicated firewall)" install_ufw
