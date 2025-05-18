@@ -132,11 +132,10 @@ install_flatpak() {
 
 # Function to install ProtonVPN
 install_protonvpn() {
-    wget -q https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb -O /tmp/protonvpn.deb
-    sudo dpkg -i /tmp/protonvpn.deb
-    sudo apt-get update
-    sudo apt-get install -y proton-vpn-gnome-desktop
-    rm /tmp/protonvpn.deb
+    wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
+    sudo dpkg -i protonvpn-stable-release_1.0.8_all.deb
+    sudo apt update
+    sudo apt install -y proton-vpn-gnome-desktop
 }
 
 # Function to install Zerotier 
@@ -200,6 +199,7 @@ install_qmk() {
     sudo apt install -y git pipx
     pipx install qmk
     pipx ensurepath
+    export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
 }
 
 # Function to install and enable UFW
