@@ -23,7 +23,7 @@ sudo apt autoremove -y
 # Update software
 
 sudo apt update
-sudo apt -y upgrade
+sudo apt upgrade -y 
 
 # Install some basic utilities
 
@@ -137,7 +137,6 @@ install_protonvpn() {
     sudo apt update
     sudo apt install -y proton-vpn-gnome-desktop
 }
-
 # Function to install Zerotier 
 install_zerotier() {
     curl -s https://install.zerotier.com | sudo bash
