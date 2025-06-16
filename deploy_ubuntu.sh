@@ -117,11 +117,10 @@ install_tor() {
 
 # Function to install DisplayLink
 install_displaylink() {
-    git clone https://github.com/AdnanHodzic/displaylink-debian.git
-    cd displaylink-debian
-    sudo ./displaylink-debian.sh
-    wget -q https://raw.githubusercontent.com/teknostatik/debian/master/20-displaylink.conf -O /etc/X11/xorg.conf.d/20-displaylink.conf
-    cd ..
+    wget https://www.synaptics.com/sites/default/files/synaptics-repository-keyring.deb -P ~/Downloads
+    sudo apt install ./Downloads/synaptics-repository-keyring.deb
+    sudo apt update
+    sudo apt install displaylink-driver
 }
 
 # Function to install Flatpak
