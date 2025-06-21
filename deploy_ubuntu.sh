@@ -120,7 +120,7 @@ install_displaylink() {
     wget https://www.synaptics.com/sites/default/files/synaptics-repository-keyring.deb -P ~/Downloads
     sudo apt install ./Downloads/synaptics-repository-keyring.deb
     sudo apt update
-    sudo apt install displaylink-driver
+    sudo apt install -y displaylink-driver
 }
 
 # Function to install Flatpak
@@ -218,6 +218,13 @@ install_smartinstall() {
     sudo chmod 755 /usr/local/bin/smartinstall
 }
 
+# Function to install Kitty
+install_kitty() {
+    sudo apt install -y kitty
+    mkdir -p ~/.config/kitty
+    wget https://raw.githubusercontent.com/teknostatik/i3_config/main/kitty.conf -O ~/.config/kitty/kitty.conf
+}
+
 # Prompt function
 prompt_install() {
     read -p "Do you want to install $1? (yes/no): " choice
@@ -229,6 +236,7 @@ prompt_install() {
 # Main script to prompt user and call installation functions
 prompt_install "More software packages suitable for using with Gnome" install_more_apps
 prompt_install "Visual Studio Code" install_vscode
+prompt_install "Kitty terminal and a sensible default configuration" install_kitty
 prompt_install "i3 tiling window manager and a sensible default configuration" install_i3
 prompt_install "Tor browser and Onionshare for browsing and sharing files on Tor" install_tor
 prompt_install "and configure Flatpak" install_flatpak
