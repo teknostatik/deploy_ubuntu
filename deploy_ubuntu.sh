@@ -37,6 +37,7 @@ sudo apt install -y \
     curl \
     build-essential \
     net-tools \
+    ripgrep \
     eza
 
 # Download and install a custom update script
