@@ -29,7 +29,7 @@ multipass set client.primary-name=ubuntu-lts
 
 # Then we will follow the same process for the latest build of the next version of Ubuntu
 
-multipass launch -m 8G -d 20G daily:25.10 --name ubuntu-devel
+multipass launch -m 8G -d 20G devel --name ubuntu-devel
 multipass exec ubuntu-devel -- wget https://raw.githubusercontent.com/teknostatik/deploy_ubuntu/main/deploy_ubuntu_wsl.sh
 multipass exec ubuntu-devel -- sudo mv deploy_ubuntu_wsl.sh /usr/local/bin/
 multipass exec ubuntu-devel -- sudo chmod 755 /usr/local/bin/deploy_ubuntu_wsl.sh
