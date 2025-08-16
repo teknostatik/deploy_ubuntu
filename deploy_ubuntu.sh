@@ -231,6 +231,17 @@ install_gearlever() {
     flatpak install -y flathub it.mijorus.gearlever
 }   
 
+# Function to install Deskflow (software KVM)
+install_deskflow() {
+    # Ensure Flatpak is available and Flathub is configured
+    if ! command -v flatpak >/dev/null 2>&1; then
+        echo "Flatpak not found. Installing and configuring Flathub..."
+        install_flatpak
+    fi
+    # Install Deskflow from Flathub
+    flatpak install -y flathub org.deskflow.deskflow
+}
+
 
 # Prompt function
 prompt_install() {
@@ -261,6 +272,7 @@ prompt_install "but don't configure, QMK" install_qmk
 prompt_install "DisplayLink docking station support" install_displaylink
 prompt_install "The right version of Fuse to get Appimages to work" install_fuse2
 prompt_install "GearLever, a flatpak app for adding Appimages to your launcher" install_gearlever
+prompt_install "Deskflow (share keyboard/mouse across computers)" install_deskflow
 prompt_install "Dropbox" install_dropbox
 
 echo "The script has now finished running."
