@@ -111,6 +111,15 @@ install_i3() {
     cd
 }
 
+# Function to install and configure Sway
+install_sway() {
+    git clone https://github.com/teknostatik/i3_config.git
+    cd i3_config/sway_config
+    chmod 755 install_sway.sh
+    ./install_sway.sh
+    cd
+}
+
 # Function to install tor
 install_tor() {
     sudo apt-get install -y torbrowser-launcher onionshare
@@ -256,6 +265,7 @@ prompt_install "More software packages suitable for using with Gnome" install_mo
 prompt_install "Visual Studio Code" install_vscode
 prompt_install "Kitty terminal and a sensible default configuration" install_kitty
 prompt_install "i3 tiling window manager and a sensible default configuration" install_i3
+prompt_install "Sway tiling window manager and a sensible default configuration" install_sway
 prompt_install "Tor browser and Onionshare for browsing and sharing files on Tor" install_tor
 prompt_install "and configure Flatpak" install_flatpak
 prompt_install "smartinstall, a script for installing packages using apt, snap, or flatpak" install_smartinstall
